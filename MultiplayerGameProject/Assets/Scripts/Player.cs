@@ -5,8 +5,16 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+
+    private float x;
+    private float y;
     [SerializeField]
-    private float moveSpeed, rotationSpeed;
+    private float sensitivity; 
+
+    private Vector3 rotate;
+
+    [SerializeField]
+    private float moveSpeed, rotationSpeed, jumpHeight;
 
     [SerializeField]
     private InputAction forwardMovement, sideMovement;
@@ -22,7 +30,18 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+
+    }
+
+     void OnEnable(){
+        forwardMovement.Enable();
+        sideMovement.Enable();
+    }
+
+     void OnDisable(){
+        forwardMovement.Disable();
+        sideMovement.Disable();
     }
 
     // Update is called once per frame
@@ -31,14 +50,24 @@ public class Player : MonoBehaviour
         float sideInput = sideMovement.ReadValue<float>();
         float forwardInput = forwardMovement.ReadValue<float>();
 
-        movementForce = new Vector3(forwardInput * moveSpeed * Time.deltaTime, 0, sideInput * moveSpeed * Time.deltaTime);
+        Vector3 directionToMove = new Vector3(sideInput, 0, forwardInput);
 
-        Vector3 directionToMove = new Vector3(forwardInput, 0, sideInput);
+        movementForce = new Vector3(sideInput * moveSpeed * Time.deltaTime, 0, forwardInput * moveSpeed * Time.deltaTime);
         transform.Translate(movementForce, Space.World);
 
-        if(movementForce != Vector3.zero && directionToMove != Vector3.zero){
-            Quaternion playerRotation = Quaternion.LookRotation(directionToMove, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, rotationSpeed * Time.deltaTime);
-        }
+        //RotateWithMouse();
+
+    }
+
+    void RotateWithMouse(){
+        y = Input.GetAxis("Mouse X");
+        x = Input.GetAxis("Mouse Y");
+        rotate = new Vector3(x, y * sensitivity, 0);
+        Quaternion playerRotation = Quaternion.LookRotation(rotate, Vector3.up);
+        
+        transform.eulerAngles = transform.eulerAngles - rotate;
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, rotationSpeed * Time.deltaTime);
+        
+        
     }
 }
