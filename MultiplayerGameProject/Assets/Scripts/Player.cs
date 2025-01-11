@@ -62,7 +62,6 @@ Player Fields
         forwardMovement.Enable();
         sideMovement.Enable();
         meleeMovement.Enable();
-        resetKey.Enable();
     }
 
 //Disables Input Actions
@@ -70,7 +69,6 @@ Player Fields
         forwardMovement.Disable();
         sideMovement.Disable();
         meleeMovement.Disable();
-        resetKey.Disable();
     }
 
     // Update is called once per frame
