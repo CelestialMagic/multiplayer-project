@@ -71,7 +71,32 @@ Player Fields
         meleeMovement.Disable();
     }
 
-    // Update is called once per frame
+
+
+private void Update(){
+
+    float sideInput = sideMovement.ReadValue<float>();
+    float forwardInput = forwardMovement.ReadValue<float>();
+
+    movementForce = new Vector3(sideInput * moveSpeed * Time.deltaTime, 0, forwardInput * moveSpeed * Time.deltaTime);
+    transform.Translate(movementForce, Space.World);
+
+
+
+}
+
+
+
+
+ /*
+SCRAPPED CODE FOR MOVEMENT (POSSIBLY TO BE USED LATER ON/REVISTED)
+-This code is intended for the FixedUpdate() method. 
+
+*/
+
+
+
+    /*
     void FixedUpdate()
     {
         //Gets value of key presses for side and forward movement
@@ -86,6 +111,8 @@ Player Fields
         if(sideInput != 0f)
              transform.Rotate(new Vector3(0, sideInput * 1, 0) * Time.fixedDeltaTime * rotationSpeed, Space.World);
     }
+
+    
         
 
 //Rotates the player with the mouse (currently buggy)
@@ -100,14 +127,10 @@ Player Fields
         
         
     }
-
-
-
-    /*
-SCRAPPED CODE FOR MOVEMENT (POSSIBLY TO BE USED LATER ON/REVISTED)
--This code is intended for the FixedUpdate() method. 
-
 */
+
+
+   
 
 //Converts this to a vector based on the movement
         //Vector3 directionToMove = new Vector3(sideInput, 0, forwardInput);
