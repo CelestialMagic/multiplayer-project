@@ -25,7 +25,7 @@ Player Fields
     private float moveSpeed, rotationSpeed;//floats representing speed to move by
 
     [SerializeField]
-    private InputAction forwardMovement, sideMovement, meleeMovement, resetKey;//InputActions to be mapped to player actions
+    private InputAction forwardMovement, sideMovement, meleeMovement;//InputActions to be mapped to player actions
 
     private Vector3 movementForce;//A force to move by
 
