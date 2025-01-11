@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//Code by Jessie Archer
 public class Player : MonoBehaviour
 {
 
@@ -17,12 +18,8 @@ the mouse.
 
     private Vector3 rotate;//Stores x + y vector to rotate by
 
-
-
-
 /*
-This code largely pertains to a tutorial I found on rotating the player with
-the mouse.
+Player Fields 
 */
     [SerializeField]
     private float moveSpeed, rotationSpeed;//floats representing speed to move by
@@ -45,7 +42,7 @@ the mouse.
     // Start is called before the first frame update
     void Start()
     {
-        //Locks cursor for rotating with mouse
+        //Locks cursor for rotating with mouse (commented out for now)
         //Cursor.lockState = CursorLockMode.Locked;
 
 //This code will be useful later for when we send RPC calls for players
@@ -83,28 +80,40 @@ the mouse.
         float sideInput = sideMovement.ReadValue<float>();
         float forwardInput = forwardMovement.ReadValue<float>();
 
+//Allows the player to move forward and backward with W and S, regardless of rotation
+        if(forwardInput != 0f)
+            rb.velocity = transform.forward * moveSpeed * forwardInput * Time.fixedDeltaTime;
+        
+//Rotates the player left and right
+        if(sideInput != 0f)
+             transform.Rotate(new Vector3(0, sideInput * 1, 0) * Time.fixedDeltaTime * rotationSpeed, Space.World);
+    }
+        
+
+//Rotates the player with the mouse (currently buggy)
+    void RotateWithMouse(){
+        y = Input.GetAxis("Mouse X");
+        x = Input.GetAxis("Mouse Y");
+        rotate = new Vector3(x, y * sensitivity, 0);
+        Quaternion playerRotation = Quaternion.LookRotation(rotate, Vector3.up);
+        
+        transform.eulerAngles = transform.eulerAngles - rotate;
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, rotationSpeed * Time.deltaTime);
+        
+        
+    }
+
+
+
+    /*
+SCRAPPED CODE FOR MOVEMENT (POSSIBLY TO BE USED LATER ON/REVISTED)
+-This code is intended for the FixedUpdate() method. 
+
+*/
+
 //Converts this to a vector based on the movement
-        Vector3 directionToMove = new Vector3(sideInput, 0, forwardInput);
-        directionToMove.Normalize();
-
-        if(forwardInput > 0f){
-            rb.velocity = transform.forward * moveSpeed * Time.fixedDeltaTime;
-        }
-        if (forwardInput < 0f){
-            rb.velocity = -transform.forward * moveSpeed * Time.fixedDeltaTime;
-        }
-
-        if(sideInput > 0f ){
-             transform.Rotate(new Vector3(0, 1, 0) * Time.fixedDeltaTime * rotationSpeed, Space.World);
-
-        }
-        if (sideInput < 0f){
-            transform.Rotate(new Vector3(0, -1, 0) * Time.fixedDeltaTime * rotationSpeed, Space.World);
-
-        }
-
-
-
+        //Vector3 directionToMove = new Vector3(sideInput, 0, forwardInput);
+        //directionToMove.Normalize();
 
 
         //if(directionToMove == Vector3.zero)
@@ -142,18 +151,8 @@ the mouse.
 
         //RotateWithMouse();
 
-    }
-
-//Rotates the player with the mouse
-    void RotateWithMouse(){
-        y = Input.GetAxis("Mouse X");
-        x = Input.GetAxis("Mouse Y");
-        rotate = new Vector3(x, y * sensitivity, 0);
-        Quaternion playerRotation = Quaternion.LookRotation(rotate, Vector3.up);
-        
-        transform.eulerAngles = transform.eulerAngles - rotate;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, rotationSpeed * Time.deltaTime);
-        
-        
-    }
 }
+
+
+
+

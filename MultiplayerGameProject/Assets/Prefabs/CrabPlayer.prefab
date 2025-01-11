@@ -821,8 +821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: -1
-  moveSpeed: 5
-  rotationSpeed: 360
+  moveSpeed: 400
+  rotationSpeed: 180
   forwardMovement:
     m_Name: Forward Movement
     m_Type: 0
