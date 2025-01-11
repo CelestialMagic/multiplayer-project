@@ -6,35 +6,52 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
 
-    private float x;
-    private float y;
+/*
+This code largely pertains to a tutorial I found on rotating the player with
+the mouse.
+*/
+    private float x;//X of Mouse
+    private float y;//Y of Mouse
     [SerializeField]
-    private float sensitivity; 
+    private float sensitivity;//Camera sensitivity 
 
-    private Vector3 rotate;
+    private Vector3 rotate;//Stores x + y vector to rotate by
+
+
+/*
+This code largely pertains to a tutorial I found on rotating the player with
+the mouse.
+*/
+    [SerializeField]
+    private float moveSpeed, rotationSpeed;//floats representing speed to move by
 
     [SerializeField]
-    private float moveSpeed, rotationSpeed, jumpHeight;
+    private InputAction forwardMovement, sideMovement, meleeMovement;//InputActions to be mapped to player actions
+
+    private Vector3 movementForce;//A force to move by
 
     [SerializeField]
-    private InputAction forwardMovement, sideMovement, meleeMovement;
-
-    private Vector3 movementForce; 
+    private GameObject prefab;//The player's prefab (to be used later for Photon)
 
     [SerializeField]
-    private GameObject prefab;
+    private Color color;//The player color 
 
-
-    
-
-    
     // Start is called before the first frame update
     void Start()
     {
         //Locks cursor for rotating with mouse
         //Cursor.lockState = CursorLockMode.Locked;
 
-
+//This code will be useful later for when we send RPC calls for players
+//joining online 
+        MeshRenderer[] childrenRenderers = GetComponentsInChildren<MeshRenderer>();
+        Debug.Log(childrenRenderers);
+        foreach (MeshRenderer m in childrenRenderers)
+        {
+            if(m.material.name == "Body (Instance)")
+                m.material.color = color;
+        }
+        
     }
 
 //Enables Input Actions
