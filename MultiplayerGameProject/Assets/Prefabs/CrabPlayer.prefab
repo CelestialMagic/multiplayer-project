@@ -267,6 +267,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: c3e7b055723e14312803cf5022e7dbff, type: 2}
+    - target: {fileID: 2438656852951536746, guid: 0ef0bfc5588c14af3b2480984b72e150, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.087
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438656852951536746, guid: 0ef0bfc5588c14af3b2480984b72e150, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.578
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438656852951536746, guid: 0ef0bfc5588c14af3b2480984b72e150, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.195
+      objectReference: {fileID: 0}
     - target: {fileID: 3316992658331686828, guid: 0ef0bfc5588c14af3b2480984b72e150, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.902
@@ -754,7 +766,18 @@ MonoBehaviour:
       m_Action: Side Movement
       m_Flags: 8
     m_Flags: 0
+  meleeMovement:
+    m_Name: Melee Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 17f05a97-2794-4380-8e1c-81e54f566610
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   prefab: {fileID: 0}
+  crabBody: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!54 &1706108124619678731
 Rigidbody:
   m_ObjectHideFlags: 0

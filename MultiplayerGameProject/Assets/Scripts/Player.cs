@@ -17,12 +17,13 @@ public class Player : MonoBehaviour
     private float moveSpeed, rotationSpeed, jumpHeight;
 
     [SerializeField]
-    private InputAction forwardMovement, sideMovement;
+    private InputAction forwardMovement, sideMovement, meleeMovement;
 
     private Vector3 movementForce; 
 
     [SerializeField]
     private GameObject prefab;
+
 
     
 
@@ -33,18 +34,21 @@ public class Player : MonoBehaviour
         //Locks cursor for rotating with mouse
         //Cursor.lockState = CursorLockMode.Locked;
 
+
     }
 
 //Enables Input Actions
      void OnEnable(){
         forwardMovement.Enable();
         sideMovement.Enable();
+        meleeMovement.Enable();
     }
 
 //Disables Input Actions
      void OnDisable(){
         forwardMovement.Disable();
         sideMovement.Disable();
+        meleeMovement.Disable();
     }
 
     // Update is called once per frame
