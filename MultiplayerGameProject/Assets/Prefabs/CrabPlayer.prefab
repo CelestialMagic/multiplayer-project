@@ -822,7 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: -1
   moveSpeed: 5
-  rotationSpeed: 720
+  rotationSpeed: 360
   forwardMovement:
     m_Name: Forward Movement
     m_Type: 0
@@ -916,7 +916,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   prefab: {fileID: 0}
-  color: {r: 1, g: 0.6273585, b: 0.8566751, a: 0}
+  color: {r: 1, g: 0.033018887, b: 0.24742185, a: 0}
   rb: {fileID: 1706108124619678731}
 --- !u!54 &1706108124619678731
 Rigidbody:
@@ -926,7 +926,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6019845414057760120}
   serializedVersion: 4
-  m_Mass: 2
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

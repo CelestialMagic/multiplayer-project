@@ -41,6 +41,7 @@ the mouse.
     [SerializeField]
     private Rigidbody rb;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,7 +77,7 @@ the mouse.
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Gets value of key presses for side and forward movement
         float sideInput = sideMovement.ReadValue<float>();
@@ -86,8 +87,28 @@ the mouse.
         Vector3 directionToMove = new Vector3(sideInput, 0, forwardInput);
         directionToMove.Normalize();
 
-        if(directionToMove == Vector3.zero)
-            return;
+        if(forwardInput > 0f){
+            rb.velocity = transform.forward * moveSpeed * Time.fixedDeltaTime;
+        }
+        if (forwardInput < 0f){
+            rb.velocity = -transform.forward * moveSpeed * Time.fixedDeltaTime;
+        }
+
+        if(sideInput > 0f ){
+             transform.Rotate(new Vector3(0, 1, 0) * Time.fixedDeltaTime * rotationSpeed, Space.World);
+
+        }
+        if (sideInput < 0f){
+            transform.Rotate(new Vector3(0, -1, 0) * Time.fixedDeltaTime * rotationSpeed, Space.World);
+
+        }
+
+
+
+
+
+        //if(directionToMove == Vector3.zero)
+            //return;
 
 //Possible Rotation Script
 /*
@@ -98,7 +119,7 @@ the mouse.
 
         rb.MoveRotation(targetRotation);
 */
-        rb.MovePosition(rb.position + directionToMove * moveSpeed * Time.deltaTime);
+        //rb.MovePosition(rb.position + directionToMove * moveSpeed * Time.deltaTime);
 
         
 
@@ -110,9 +131,6 @@ the mouse.
         //transform.Translate(movementForce, Space.World);
 
        
-
-
-
 
 /*
         if(movementForce != Vector3.zero && directionToMove != Vector3.zero){
