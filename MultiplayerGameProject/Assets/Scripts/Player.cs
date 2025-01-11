@@ -18,6 +18,8 @@ the mouse.
     private Vector3 rotate;//Stores x + y vector to rotate by
 
 
+
+
 /*
 This code largely pertains to a tutorial I found on rotating the player with
 the mouse.
@@ -26,7 +28,7 @@ the mouse.
     private float moveSpeed, rotationSpeed;//floats representing speed to move by
 
     [SerializeField]
-    private InputAction forwardMovement, sideMovement, meleeMovement;//InputActions to be mapped to player actions
+    private InputAction forwardMovement, sideMovement, meleeMovement, resetKey;//InputActions to be mapped to player actions
 
     private Vector3 movementForce;//A force to move by
 
@@ -35,6 +37,9 @@ the mouse.
 
     [SerializeField]
     private Color color;//The player color 
+
+    [SerializeField]
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +64,7 @@ the mouse.
         forwardMovement.Enable();
         sideMovement.Enable();
         meleeMovement.Enable();
+        resetKey.Enable();
     }
 
 //Disables Input Actions
@@ -66,6 +72,7 @@ the mouse.
         forwardMovement.Disable();
         sideMovement.Disable();
         meleeMovement.Disable();
+        resetKey.Disable();
     }
 
     // Update is called once per frame
@@ -77,10 +84,43 @@ the mouse.
 
 //Converts this to a vector based on the movement
         Vector3 directionToMove = new Vector3(sideInput, 0, forwardInput);
+        directionToMove.Normalize();
+
+        if(directionToMove == Vector3.zero)
+            return;
+
+//Possible Rotation Script
+/*
+        Quaternion targetRotation = Quaternion.LookRotation(new Vector3(directionToMove.x, 0, 0));
+        targetRotation = Quaternion.RotateTowards(transform.rotation,
+        targetRotation,
+        rotationSpeed * Time.deltaTime);
+
+        rb.MoveRotation(targetRotation);
+*/
+        rb.MovePosition(rb.position + directionToMove * moveSpeed * Time.deltaTime);
+
+        
+
+
+        
 
 //Multiplies movement vector by deltaTime and the speed to move by
-        movementForce = new Vector3(sideInput * moveSpeed * Time.deltaTime, 0, forwardInput * moveSpeed * Time.deltaTime);
-        transform.Translate(movementForce, Space.World);
+        //movementForce = new Vector3(sideInput * moveSpeed * Time.deltaTime, 0, forwardInput * moveSpeed * Time.deltaTime);
+        //transform.Translate(movementForce, Space.World);
+
+       
+
+
+
+
+/*
+        if(movementForce != Vector3.zero && directionToMove != Vector3.zero){
+            Quaternion playerRotation = Quaternion.LookRotation(new Vector3(directionToMove.x,0f,0f), Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, rotationSpeed * Time.deltaTime);
+        }
+*/
+
 
         //RotateWithMouse();
 

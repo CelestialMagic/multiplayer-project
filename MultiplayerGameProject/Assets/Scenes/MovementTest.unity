@@ -380,7 +380,6 @@ MonoBehaviour:
   sensitivity: -1
   moveSpeed: 5
   rotationSpeed: 0
-  jumpHeight: 0
   forwardMovement:
     m_Name: Forward Movement
     m_Type: 0
@@ -456,8 +455,18 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  resetKey:
+    m_Name: Reset Key
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: dedda7ea-b1f2-40aa-952f-4836862bfc7e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   prefab: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
+  rb: {fileID: 0}
 --- !u!1 &585691755
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,7 +679,7 @@ Transform:
   m_GameObject: {fileID: 892280400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09000006, y: 3.8400002, z: -3.2166958}
+  m_LocalPosition: {x: 0.68000007, y: 3.8400002, z: -1.2166958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -780,7 +789,7 @@ Transform:
   m_GameObject: {fileID: 1525866646}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.01124787, z: 0, w: 0.99993676}
-  m_LocalPosition: {x: 0.09000006, y: 3.8400002, z: -3.2166958}
+  m_LocalPosition: {x: 0.68000007, y: 3.8400002, z: -1.2166958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -819,103 +828,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3613567641014311022, guid: d1574f48a803b48919855b9026c30505, type: 3}
---- !u!1001 &1581875288
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1706108124619678731, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_Constraints
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476206356587550820, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6019845414057760120, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_Name
-      value: HermitCrab(Pants) (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395420635113000898, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395420635113000898, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395420635113000898, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 11.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395420635113000898, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395420635113000898, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395420635113000898, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395420635113000898, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395420635113000898, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395420635113000898, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 6395420635113000898, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: color.r
-      value: 0.47704935
-      objectReference: {fileID: 0}
-    - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: crabBody
-      value: 
-      objectReference: {fileID: 2100000, guid: 3dfdaef0564a048728b2d5509dbdfa10, type: 2}
-    - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: sideMovement.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/j
-      objectReference: {fileID: 0}
-    - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: sideMovement.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Keyboard>/l
-      objectReference: {fileID: 0}
-    - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: forwardMovement.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/i
-      objectReference: {fileID: 0}
-    - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: forwardMovement.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Keyboard>/k
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
 --- !u!1001 &1808558329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1178,11 +1090,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd6043bde05a7fc4cba197d06915c1e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0.1, y: 0.5, z: 0.1}
+  Damping: {x: 0.1, y: 0.5, z: 0.3}
   ShoulderOffset: {x: 0.5, y: -0.4, z: 0}
   VerticalArmLength: 0.4
-  CameraSide: 0.41
-  CameraDistance: 4
+  CameraSide: 1
+  CameraDistance: 2
   CameraCollisionFilter:
     serializedVersion: 2
     m_Bits: 0
@@ -1190,6 +1102,75 @@ MonoBehaviour:
   CameraRadius: 0.2
   DampingIntoCollision: 0
   DampingFromCollision: 2
+--- !u!1001 &1620241218102426169
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4961632416995075175, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961632416995075175, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961632416995075175, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961632416995075175, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961632416995075175, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961632416995075175, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961632416995075175, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961632416995075175, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961632416995075175, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961632416995075175, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5733243720375844573, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: m_Name
+      value: HermitCrab(Pants) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243824183635334432, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243824183635334432, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: color.g
+      value: 0.3904882
+      objectReference: {fileID: 0}
+    - target: {fileID: 8243824183635334432, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
+      propertyPath: color.r
+      value: 0.3254717
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a3002b1788014dd8976d7466da00f33, type: 3}
 --- !u!1001 &5589955737748187781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1198,14 +1179,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1706108124619678731, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_Constraints
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 2476206356587550820, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6019845414057760120, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
       propertyPath: m_Name
       value: HermitCrab(Pants)
@@ -1252,20 +1225,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
       propertyPath: color.b
-      value: 1
+      value: 0.24742185
       objectReference: {fileID: 0}
     - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
       propertyPath: color.g
-      value: 0.112401485
+      value: 0.033018887
       objectReference: {fileID: 0}
     - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
       propertyPath: color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-      propertyPath: crabBody
-      value: 
-      objectReference: {fileID: 2100000, guid: 3dfdaef0564a048728b2d5509dbdfa10, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1278,7 +1247,7 @@ SceneRoots:
   - {fileID: 892280403}
   - {fileID: 752162802}
   - {fileID: 5589955737748187781}
-  - {fileID: 1581875288}
+  - {fileID: 1620241218102426169}
   - {fileID: 579347227}
   - {fileID: 28110033}
   - {fileID: 1525866648}
