@@ -38,8 +38,9 @@ Player Fields
 
 
 
+
     [SerializeField]
-    private GameObject prefab;//The player's prefab (to be used later for Photon)
+    private GameObject prefab, modelView;//The player's prefab (to be used later for Photon)
 
     [SerializeField]
     private Color color;//The player color 
@@ -93,7 +94,11 @@ private void Update(){
 
     rb.drag = groundDrag; 
 
-    SimpleRotation();
+    
+
+        SimpleRotation();
+
+    
 
 }
 
@@ -128,6 +133,16 @@ private void SimpleRotation(){
     followCam.transform.localRotation = Quaternion.Euler(rotation, 0, 0);
     transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * viewSpeed, 0);
 }
+
+private void ModelRotation(){
+    //Rotation with Mouse Code
+    rotation += -Input.GetAxis("Mouse Y") * viewSpeed;
+    rotation = Mathf.Clamp(rotation, -viewRange, viewRange);
+    followCam.transform.localRotation = Quaternion.Euler(rotation, 0, 0);
+    modelView.transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * viewSpeed, 0);
+}
+
+
 
  /*
 SCRAPPED CODE FOR MOVEMENT (POSSIBLY TO BE USED LATER ON/REVISTED)
