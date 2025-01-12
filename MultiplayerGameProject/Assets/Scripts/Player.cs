@@ -95,11 +95,6 @@ private void Update(){
 
     SimpleRotation();
 
-
-        
-
-
-
 }
 
 private void MovePlayer(){
