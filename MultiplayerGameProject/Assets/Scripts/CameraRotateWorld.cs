@@ -4,26 +4,30 @@ using UnityEngine;
 
 public class CameraRotateWorld : MonoBehaviour
 {
-    private float x;
-    private float y;
     [SerializeField]
-    private float sensitivity; 
+    private Transform orientation, player, playerObj;
 
-    private Vector3 rotate;
+    [SerializeField]
+    private Rigidbody rb;
 
+    [SerializeField]
+    private float rotationSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
+private void Start(){
+    Cursor.lockState = CursorLockMode.Locked; 
+    
+}
+    void Update(){
+        Vector3 viewDirection = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
+        orientation.forward = viewDirection.normalized;
+
+        float sideInput = player.gameObject.GetComponent<Player>().GetSideInput();
+        float forwardInput = player.gameObject.GetComponent<Player>().GetForwardInput();
+
+        Vector3 inputDirection = orientation.forward * forwardInput + orientation.right * sideInput;
+
+        if(inputDirection != Vector3.zero)
+            playerObj.forward = Vector3.Slerp(playerObj.forward, inputDirection.normalized, Time.deltaTime * rotationSpeed);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        y = Input.GetAxis("Mouse X");
-        x = Input.GetAxis("Mouse Y");
-        rotate = new Vector3(x, y * sensitivity, 0);
-        transform.eulerAngles = transform.eulerAngles - rotate; 
-    }
 }
