@@ -18,6 +18,10 @@ the mouse.
 
     private Vector3 rotate;//Stores x + y vector to rotate by
 
+    public CharacterController controller;
+
+    public Transform cam;
+
 /*
 Player Fields 
 */
@@ -39,11 +43,20 @@ Player Fields
     private Rigidbody rb;
 
 
+    // variables below are used for turning the player
+    public float turnSmoothTime = 0.1f;
+
+    private float turnSmoothVelocity;
+
+
     // Start is called before the first frame update
     void Start()
     {
         //Locks cursor for rotating with mouse (commented out for now)
         //Cursor.lockState = CursorLockMode.Locked;
+
+        //Adds player's character controller to itself
+        controller = gameObject.GetComponent<CharacterController>();
 
 //This code will be useful later for when we send RPC calls for players
 //joining online 
@@ -77,29 +90,40 @@ Player Fields
         //Gets value of key presses for side and forward movement
         float sideInput = sideMovement.ReadValue<float>();
         float forwardInput = forwardMovement.ReadValue<float>();
+        Vector3 direction = new Vector3(sideInput, 0f, forwardInput).normalized;
 
 //Allows the player to move forward and backward with W and S, regardless of rotation
-        if(forwardInput != 0f)
-            rb.velocity = transform.forward * moveSpeed * forwardInput * Time.fixedDeltaTime;
+        if(direction.magnitude != 0f) {
+            // rb.velocity = transform.forward * moveSpeed * forwardInput * Time.fixedDeltaTime;
+
+            // makes player face the direction they're moving
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            controller.Move(moveDir.normalized * moveSpeed * Time.deltaTime);
+        }
+            
         
 //Rotates the player left and right
-        if(sideInput != 0f)
-             transform.Rotate(new Vector3(0, sideInput * 1, 0) * Time.fixedDeltaTime * rotationSpeed, Space.World);
+        // if(sideInput != 0f)
+        //      rb.velocity = transform.right.normalized * moveSpeed * sideInput * Time.fixedDeltaTime;
     }
         
 
 //Rotates the player with the mouse (currently buggy)
-    void RotateWithMouse(){
-        y = Input.GetAxis("Mouse X");
-        x = Input.GetAxis("Mouse Y");
-        rotate = new Vector3(x, y * sensitivity, 0);
-        Quaternion playerRotation = Quaternion.LookRotation(rotate, Vector3.up);
+    // void RotateWithMouse(){
+    //     y = Input.GetAxis("Mouse X");
+    //     x = Input.GetAxis("Mouse Y");
+    //     rotate = new Vector3(x, y * sensitivity, 0);
+    //     Quaternion playerRotation = Quaternion.LookRotation(rotate, Vector3.up);
         
-        transform.eulerAngles = transform.eulerAngles - rotate;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, rotationSpeed * Time.deltaTime);
+    //     transform.eulerAngles = transform.eulerAngles - rotate;
+    //     transform.rotation = Quaternion.RotateTowards(transform.rotation, playerRotation, rotationSpeed * Time.deltaTime);
         
         
-    }
+    // }
 
 
 

@@ -508,6 +508,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ef0bfc5588c14af3b2480984b72e150, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1706108124619678731}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ef0bfc5588c14af3b2480984b72e150, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8057285235102513799}
     - targetCorrespondingSourceObject: {fileID: 9013638940889411661, guid: 0ef0bfc5588c14af3b2480984b72e150, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5722570997140559998}
@@ -821,7 +824,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sensitivity: -1
-  moveSpeed: 400
+  controller: {fileID: 0}
+  moveSpeed: 10
   rotationSpeed: 180
   forwardMovement:
     m_Name: Forward Movement
@@ -898,23 +902,6 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  resetKey:
-    m_Name: Reset Key
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: cd20a75a-290d-4c86-95b2-cdb8c8c03ae2
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 161b143a-778d-4f0c-8261-39dc7e460866
-      m_Path: <Keyboard>/1
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Reset Key
-      m_Flags: 0
-    m_Flags: 0
   prefab: {fileID: 0}
   color: {r: 1, g: 0.033018887, b: 0.24742185, a: 0}
   rb: {fileID: 1706108124619678731}
@@ -945,6 +932,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!143 &8057285235102513799
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6019845414057760120}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2.13
+  m_Radius: 0.66
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6122664071589678163 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8380157826906577798, guid: 0ef0bfc5588c14af3b2480984b72e150, type: 3}
