@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -304,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243433832}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.05005855, y: 0.000000017184805, z: 8.613264e-10, w: 0.99874634}
+  m_LocalRotation: {x: -0.05005855, y: -0.000000017184812, z: -8.6132673e-10, w: 0.99874634}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -461,11 +461,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67ae672e261e40af8c13ff1a8406923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: -1
-  controller: {fileID: 0}
-  cam: {fileID: 0}
   moveSpeed: 5
   rotationSpeed: 0
+  groundDrag: 0
+  orientation: {fileID: 0}
   forwardMovement:
     m_Name: Forward Movement
     m_Type: 0
@@ -541,10 +540,13 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  followCam: {fileID: 0}
+  viewSpeed: 0
+  viewRange: 0
   prefab: {fileID: 0}
+  modelView: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
   rb: {fileID: 0}
-  turnSmoothTime: 0.1
 --- !u!1 &585691755
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,7 +898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892280400}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.050058555, y: 0.00000003436962, z: 0.000000001722653, w: 0.99874634}
+  m_LocalRotation: {x: -0.050058555, y: -0.000000034369624, z: -0.0000000017226532, w: 0.99874634}
   m_LocalPosition: {x: 2.75, y: 1.5699999, z: -9.276695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1064,6 +1066,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1529672229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6019845414057760120, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
+  m_PrefabInstance: {fileID: 5589955737748187781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &1529672230 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 8057285235102513799, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
+  m_PrefabInstance: {fileID: 5589955737748187781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1529672232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529672229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef75697ca80b54d17a693402e16b62ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 0
+  controller: {fileID: 1529672230}
+  cam: {fileID: 644617609}
+  moveSpeed: 10
+  rotationSpeed: 0
+  forwardMovement:
+    m_Name: Forward Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f9cf4a0d-b2c3-4bd2-b580-645260cf0570
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: 0942119b-7723-4bb8-acfd-f71e62ab3caf
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: f42dc700-b0f3-49d1-bcb2-c79edd427abd
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 8ec4ee01-022c-4cf4-b0e6-5bd68d9474b5
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 8
+    m_Flags: 0
+  sideMovement:
+    m_Name: Side Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ba70bbe6-38be-481e-9e13-0d0a758fa5a6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: 8f6c990c-d55d-4d26-a657-e9a8a506500d
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: b96b60a3-0a2f-4908-a2a9-7a6d65fb0be3
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: a81e724f-0c66-427f-a437-a2a799b79e41
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 8
+    m_Flags: 0
+  meleeMovement:
+    m_Name: Melee Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 250824dd-42d6-4c1a-b1cc-5f9f045f4a73
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  prefab: {fileID: 0}
+  color: {r: 1, g: 0, b: 0, a: 0}
+  rb: {fileID: 0}
+  turnSmoothTime: 0.1
 --- !u!1 &1554479362 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d1574f48a803b48919855b9026c30505, type: 3}
@@ -1294,7 +1402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698277010}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.013746104, y: 5.552164e-17, z: 2.0859931e-19, w: 0.9999055}
+  m_LocalRotation: {x: -0.013746104, y: -5.552164e-17, z: -2.0859931e-19, w: 0.9999055}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1677,7 +1785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146341761}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0319316, y: -0.000000002149701, z: -6.867841e-11, w: 0.9994901}
+  m_LocalRotation: {x: -0.0319316, y: 0.000000002149701, z: 6.867841e-11, w: 0.9994901}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1930,10 +2038,14 @@ PrefabInstance:
       propertyPath: forwardMovement.m_SingletonActionBindings.Array.data[5].m_Action
       value: Forward Movement
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6019845414057760120, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1529672232}
   m_SourcePrefab: {fileID: 100100000, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
