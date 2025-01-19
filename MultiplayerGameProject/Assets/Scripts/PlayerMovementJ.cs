@@ -31,11 +31,11 @@ Player Fields
 
      private float viewSpeed, viewRange;//Speed and range of view 
 
+     [SerializeField]
+     private GameObject currentShell; 
 
-
-
-
-
+     [SerializeField]
+     private List<Shell> playerShells; 
 
     [SerializeField]
     private GameObject prefab, modelView;//The player's prefab (to be used later for Photon)
@@ -138,5 +138,36 @@ private void ModelRotation(){
     rotation = Mathf.Clamp(rotation, -viewRange, viewRange);
     followCam.transform.localRotation = Quaternion.Euler(rotation, 0, 0);
     modelView.transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * viewSpeed, 0);
+}
+
+
+private void OnTriggerEnter(Collider collision){
+    Debug.Log("In Trigger");
+
+//Checks if collider is a shell 
+    if(collision.gameObject.tag == "Shell"){
+
+        if(currentShell.GetComponent<Shell>().GetName() != collision.gameObject.GetComponent<Shell>().GetName()){
+            //Hides the shell currently equipped 
+
+            currentShell.SetActive(false);
+            foreach(Shell s in playerShells)
+            {
+                //Compares currentShell to list of possible shells 
+                if(s.GetName() == collision.gameObject.GetComponent<Shell>().GetName()){
+                    currentShell = s.gameObject;
+                    currentShell.SetActive(true);
+                    break;
+                    //Ends loop when found 
+                }
+                
+            }
+
+            Destroy(collision.gameObject);
+
+        }
+
+    }
+
 }
 }
