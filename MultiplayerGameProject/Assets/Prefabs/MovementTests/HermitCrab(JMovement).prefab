@@ -301,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1706108124619678731, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2476206356587550820, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
       propertyPath: m_Name
@@ -565,6 +565,7 @@ MonoBehaviour:
   moveSpeed: 40
   rotationSpeed: 180
   groundDrag: 1
+  jumpForce: 4
   orientation: {fileID: 3751583052324540482}
   forwardMovement:
     m_Name: Forward Movement
@@ -688,6 +689,23 @@ MonoBehaviour:
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
+    m_Flags: 0
+  jumpMovement:
+    m_Name: Jump Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 018165f0-b16c-4744-add5-f7df7d2d15dc
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 1e4f6f0c-2dfb-47ba-95fa-8550b2e85875
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump Movement
+      m_Flags: 0
     m_Flags: 0
   followCam: {fileID: 2829932862784158046}
   viewSpeed: 0.5

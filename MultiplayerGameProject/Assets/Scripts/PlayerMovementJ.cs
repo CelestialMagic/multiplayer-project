@@ -10,7 +10,7 @@ public class PlayerMovementJ : MonoBehaviour
 Player Fields 
 */
     [SerializeField]
-    private float moveSpeed, rotationSpeed, groundDrag;//floats representing speed to move by
+    private float moveSpeed, rotationSpeed, groundDrag, jumpForce;//floats representing speed to move by
 
     [SerializeField]
     private Transform orientation;
@@ -20,7 +20,7 @@ Player Fields
     private float sideInput, forwardInput; 
 
     [SerializeField]
-    private InputAction forwardMovement, sideMovement, meleeMovement;//InputActions to be mapped to player actions
+    private InputAction forwardMovement, sideMovement, meleeMovement, jumpMovement;//InputActions to be mapped to player actions
 
     [SerializeField]
     private CinemachineVirtualCamera followCam;
@@ -47,6 +47,7 @@ Player Fields
     private Rigidbody rb;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +71,7 @@ Player Fields
         forwardMovement.Enable();
         sideMovement.Enable();
         meleeMovement.Enable();
+        jumpMovement.Enable();
     }
 
 //Disables Input Actions
@@ -77,6 +79,7 @@ Player Fields
         forwardMovement.Disable();
         sideMovement.Disable();
         meleeMovement.Disable();
+        jumpMovement.Disable();
     }
 
 void FixedUpdate(){
@@ -92,9 +95,11 @@ private void Update(){
 
     rb.drag = groundDrag; 
 
-    
-
         SimpleRotation();
+
+    if(jumpMovement.ReadValue<float>() != 0){
+        rb.AddForce(Vector3.up * jumpForce);
+    }
 
     
 
