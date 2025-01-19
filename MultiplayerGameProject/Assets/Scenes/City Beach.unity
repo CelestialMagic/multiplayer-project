@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 436876940}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -444,6 +444,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1403528057719067276, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
+      propertyPath: jumpForce
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3631565119205776000, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5495902117074765545, guid: 7153e4a4afff042c6a648822333c1865, type: 3}
     - target: {fileID: 6767957245811434281, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
       propertyPath: m_Name
       value: HermitCrab(JMovement)
@@ -488,7 +496,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8897993058041084811, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3631565119205776000, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

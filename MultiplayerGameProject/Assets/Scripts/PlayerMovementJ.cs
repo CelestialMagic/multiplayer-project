@@ -46,6 +46,8 @@ Player Fields
     [SerializeField]
     private Rigidbody rb;
 
+    private bool isGrounded = false; 
+
 
 
     // Start is called before the first frame update
@@ -97,7 +99,7 @@ private void Update(){
 
         SimpleRotation();
 
-    if(jumpMovement.ReadValue<float>() != 0){
+    if(jumpMovement.ReadValue<float>() != 0 && isGrounded == true){
         rb.AddForce(Vector3.up * jumpForce);
     }
 
@@ -175,4 +177,20 @@ private void OnTriggerEnter(Collider collision){
     }
 
 }
+
+private void OnCollisionStay(Collision collision){
+    if(collision.gameObject.tag == "Ground"){
+        
+        isGrounded = true;
+        Debug.Log(isGrounded);
+    }
+}
+
+private void OnCollisionExit(Collision collision){
+    isGrounded = false; 
+    Debug.Log(isGrounded);
+}
+
+
+
 }
