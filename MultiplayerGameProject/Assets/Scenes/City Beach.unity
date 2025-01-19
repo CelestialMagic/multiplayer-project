@@ -554,24 +554,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
---- !u!1 &1734570721 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8683947871775244318, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
-  m_PrefabInstance: {fileID: 5890766519514828168}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1734570724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734570721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d26915238f94e92be34f154954b7b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: BasicShell
 --- !u!1001 &1975634745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -673,10 +655,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConeShellPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 7256559768300485710, guid: 6beb025efa47444158f48d9e1740ab49, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7523298313016904121, guid: 6beb025efa47444158f48d9e1740ab49, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.24
@@ -730,30 +708,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1120486189094357279, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1120486189094357279, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1120486189094357279, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1120486189094357279, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1120486189094357279, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1120486189094357279, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2421702395228576393, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.37
@@ -798,22 +752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapBasicShell
       objectReference: {fileID: 0}
-    - target: {fileID: 8683947871775244318, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8683947871775244318, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
-      propertyPath: m_TagString
-      value: Shell
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9166049420372115768, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8683947871775244318, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1734570724}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
