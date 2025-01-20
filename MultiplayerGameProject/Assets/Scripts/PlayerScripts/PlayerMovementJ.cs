@@ -67,16 +67,13 @@ Player Fields
     // Start is called before the first frame update
     void Start()
     {
+        
         //Locks cursor for rotating with mouse (commented out for now)
         //Cursor.lockState = CursorLockMode.Locked;
 
-//This code will be useful later for when we send RPC calls for players
-//joining online 
-
-if(!view.IsMine){
+    if(!view.IsMine){
     followCam.enabled = false;
-}
-
+    }
         Color color = colorPalettes[(int)Random.Range(0, colorPalettes.Count - 1)];//Picks a random color 
         //RPC call
         if (view)
@@ -95,6 +92,7 @@ if(!view.IsMine){
 //players' screens. 
 [PunRPC]
 private void RPC_SendColor(Vector3 color){
+    PhotonNetwork.AutomaticallySyncScene = true;
     MeshRenderer[] childrenRenderers = GetComponentsInChildren<MeshRenderer>();
         Debug.Log(childrenRenderers);
         foreach (MeshRenderer m in childrenRenderers)
@@ -146,7 +144,10 @@ private void OnDestroy(){
     }
 
 void FixedUpdate(){
+
+if (view.IsMine){
     MovePlayer();
+}
     
 }
 
