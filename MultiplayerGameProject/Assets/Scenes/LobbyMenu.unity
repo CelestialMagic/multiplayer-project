@@ -998,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b767f8bf56f46db93b94c5cefd200f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayersPerRoom: 4
+  maxPlayersPerRoom: 5
   lobbyDisplay: {fileID: 1604988599}
   createRoomInput: {fileID: 260228128}
   joinRoomInput: {fileID: 1388068395}
