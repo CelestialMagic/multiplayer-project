@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using Photon.Pun;
 using TMPro;
 
-public class PlayerMovementJ : MonoBehaviour
-{
+public class PlayerMovementJ : MonoBehaviour{
+
     /*
 Player Fields 
 */
@@ -42,9 +43,6 @@ Player Fields
     private GameObject prefab, modelView;//The player's prefab (to be used later for Photon)
 
     [SerializeField]
-    private Color color;//The player color (to be used by Photon eventually)
-
-    [SerializeField]
     private Rigidbody rb;//The player's rigidbody
 
     private bool isGrounded = false;//Checks if player can jump again 
@@ -55,25 +53,75 @@ Player Fields
     [SerializeField]
     private TMP_Text shellText;//Display text for collided shells 
 
+    [SerializeField]
+    private PhotonView view;//The PhotonView Component
+
+    [SerializeField]
+    private List<Color> colorPalettes;//A list of colors to randomly select when online 
+
+    [SerializeField]
+    private static List<GameObject> onlinePlayers = new List<GameObject>();//List of players currently online in lobby
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         //Locks cursor for rotating with mouse (commented out for now)
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
 
 //This code will be useful later for when we send RPC calls for players
 //joining online 
-        MeshRenderer[] childrenRenderers = GetComponentsInChildren<MeshRenderer>();
+
+        Color color = colorPalettes[(int)Random.Range(0, colorPalettes.Count - 1)];//Picks a random color 
+        //RPC call
+        if (view)
+            this.view.RPC("RPC_SendColor", RpcTarget.All, new Vector3(color.r, color.g, color.b));
+        
+    }
+
+//Returns the active player objects 
+ public static List<GameObject> GetOnlinePlayers()
+    {
+        return onlinePlayers;
+    }
+
+
+ //RPC_SendColor() sets the player to a random color and updates the other
+//players' screens. 
+[PunRPC]
+private void RPC_SendColor(Vector3 color){
+    MeshRenderer[] childrenRenderers = GetComponentsInChildren<MeshRenderer>();
         Debug.Log(childrenRenderers);
         foreach (MeshRenderer m in childrenRenderers)
         {
             if(m.material.name == "Body (Instance)")
-                m.material.color = color;
+                m.material.color = new Color(color.x, color.y, color.z);
         }
-        
+}
+//Resets the list of active players
+private void OnDestroy(){
+    {
+        onlinePlayers = new List<GameObject>();
     }
+
+}
+
+
+
+
+
+    private void Awake(){
+        onlinePlayers.Add(this.gameObject);
+    }
+
+
+//Returns the PhotonView Component
+    public PhotonView GetView(){
+        return view;
+    }
+
+
 
 //Enables Input Actions
      void OnEnable(){
@@ -99,7 +147,7 @@ void FixedUpdate(){
 }
 
 private void Update(){
-
+//if (view.IsMine){
     sideInput = GetSideInput();
     forwardInput = GetForwardInput();
     SpeedControl();
@@ -110,8 +158,8 @@ private void Update(){
 
     if(jumpMovement.ReadValue<float>() != 0 && isGrounded == true){
         rb.AddForce(Vector3.up * jumpForce);
-    }
-
+    //}
+}
     
 
 }
@@ -173,7 +221,7 @@ private void OnTriggerEnter(Collider collision){
 
 
 //Contains logic for remaining in range of the shell to collect 
-private void OnTriggerStay(Collider collision){
+private void OnTriggerStay(Collider collision) {
     Debug.Log("In Trigger");
 
 //Checks if collider is a shell 
@@ -210,8 +258,8 @@ private void OnTriggerStay(Collider collision){
         }
 
 
-    }
 
+}
 }
 private void OnTriggerExit(Collider collision){
     shellUI.SetActive(false);

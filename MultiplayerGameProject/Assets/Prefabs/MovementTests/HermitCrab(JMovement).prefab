@@ -342,6 +342,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8721177868243308498}
+  - component: {fileID: 6882556371700322775}
+  - component: {fileID: 8445883237830248312}
   m_Layer: 0
   m_Name: HermitCrab(JMovement)
   m_TagString: Untagged
@@ -367,6 +369,239 @@ Transform:
   - {fileID: 6857023184804624407}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &6882556371700322775
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767957245811434281}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &8445883237830248312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767957245811434281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f54e7663ceb4600835b274bea5a70b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 40
+  rotationSpeed: 180
+  groundDrag: 1
+  jumpForce: 175
+  orientation: {fileID: 3751583052324540482}
+  forwardMovement:
+    m_Name: Forward Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 14dd1dd4-d70e-42fa-98e3-19b7da12d026
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: 598cb03e-8922-473d-8edc-0be7ce22bf56
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 4
+    - m_Name: positive
+      m_Id: 6a2af5d4-eb33-4f2e-a825-df171ed6610e
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 8
+    - m_Name: negative
+      m_Id: 79349843-ee8a-4b40-a4bf-003cb0a335bf
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 8
+    - m_Name: Controller
+      m_Id: bd52f0cc-62e4-4859-aa5d-688acad87677
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 4
+    - m_Name: positive
+      m_Id: ddcfc709-edf4-46eb-a7ad-c4b88e026600
+      m_Path: <Gamepad>/leftStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 8
+    - m_Name: negative
+      m_Id: 98944902-dd5e-4bbd-8907-0713e6e06fcb
+      m_Path: <Gamepad>/leftStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward Movement
+      m_Flags: 8
+    m_Flags: 0
+  sideMovement:
+    m_Name: Side Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d532c331-8345-49e7-997f-aa3fc8ef0f50
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Controller
+      m_Id: 74908f4e-febc-48ed-ae9d-bd8abbda8d2b
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: b4218c68-417c-419d-ab07-d94f8978b158
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 5d0fccd1-fe5a-4647-b8a9-74c0af47be81
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 8
+    - m_Name: Keyboard
+      m_Id: dd40f0b7-1f43-4819-ac21-81153ddf5e4a
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 601da1af-a5dc-43dd-ac03-788ff3e55deb
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: c96b3259-7848-49ff-98da-dbe4b13aa173
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Side Movement
+      m_Flags: 8
+    m_Flags: 0
+  meleeMovement:
+    m_Name: Melee Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ca1e6821-c0c4-4a30-80ce-45c76b782bae
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  jumpMovement:
+    m_Name: Jump Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 018165f0-b16c-4744-add5-f7df7d2d15dc
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 1e4f6f0c-2dfb-47ba-95fa-8550b2e85875
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump Movement
+      m_Flags: 0
+    - m_Name: 
+      m_Id: c6a6cff1-f145-4534-a07a-5d866e2fc0fd
+      m_Path: <Gamepad>/buttonNorth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump Movement
+      m_Flags: 0
+    m_Flags: 0
+  selectMovement:
+    m_Name: Select Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 84d66163-72b0-4e53-a85e-605794cb661d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 8710d00e-0413-4397-9db1-c31ef2e321ac
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Movement
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 766b7f75-d271-4c88-909a-260c47c95082
+      m_Path: <Gamepad>/buttonEast
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Movement
+      m_Flags: 0
+    m_Flags: 0
+  followCam: {fileID: 2829932862784158046}
+  viewSpeed: 0.5
+  viewRange: 360
+  currentShell: {fileID: 5659922239014045668}
+  playerShells:
+  - {fileID: 9080299026115620015}
+  - {fileID: 9024958791083201233}
+  - {fileID: 4966725219194605199}
+  - {fileID: 7036679221951733946}
+  prefab: {fileID: 5659922239014045668}
+  modelView: {fileID: 93471069904529513}
+  rb: {fileID: 6882556371700322775}
+  shellUI: {fileID: 6793128094291389621}
+  shellText: {fileID: 5743086215324184119}
+  view: {fileID: 0}
+  colorPalettes: []
 --- !u!1 &6793128094291389621
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +1015,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
       propertyPath: prefab
       value: 
       objectReference: {fileID: 0}
@@ -944,9 +1183,10 @@ PrefabInstance:
       value: Forward Movement
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
     - {fileID: 8057285235102513799, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
     - {fileID: 6824287117548881152, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
+    - {fileID: 7961705675599068805, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
+    - {fileID: 1706108124619678731, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6395420635113000898, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
@@ -988,7 +1228,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4565414464511167224}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6f54e7663ceb4600835b274bea5a70b, type: 3}
   m_Name: 
@@ -1182,10 +1422,11 @@ MonoBehaviour:
   - {fileID: 7036679221951733946}
   prefab: {fileID: 5659922239014045668}
   modelView: {fileID: 93471069904529513}
-  color: {r: 1, g: 0.03137255, b: 0.24705882, a: 0}
-  rb: {fileID: 8897993058041084811}
+  rb: {fileID: 0}
   shellUI: {fileID: 6793128094291389621}
   shellText: {fileID: 5743086215324184119}
+  view: {fileID: 0}
+  colorPalettes: []
 --- !u!1 &5659922239014045668 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2476206356587550820, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
@@ -1207,11 +1448,6 @@ MonoBehaviour:
 --- !u!4 &7218456320396205335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 647478214277497495, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
-  m_PrefabInstance: {fileID: 7841142735694405504}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &8897993058041084811 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 1706108124619678731, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
   m_PrefabInstance: {fileID: 7841142735694405504}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8493907823397302015
