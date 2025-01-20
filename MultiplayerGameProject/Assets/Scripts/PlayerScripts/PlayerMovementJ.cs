@@ -73,6 +73,10 @@ Player Fields
 //This code will be useful later for when we send RPC calls for players
 //joining online 
 
+if(!view.IsMine){
+    followCam.enabled = false;
+}
+
         Color color = colorPalettes[(int)Random.Range(0, colorPalettes.Count - 1)];//Picks a random color 
         //RPC call
         if (view)
@@ -147,7 +151,7 @@ void FixedUpdate(){
 }
 
 private void Update(){
-//if (view.IsMine){
+if (view.IsMine){
     sideInput = GetSideInput();
     forwardInput = GetForwardInput();
     SpeedControl();
@@ -158,7 +162,7 @@ private void Update(){
 
     if(jumpMovement.ReadValue<float>() != 0 && isGrounded == true){
         rb.AddForce(Vector3.up * jumpForce);
-    //}
+    }
 }
     
 

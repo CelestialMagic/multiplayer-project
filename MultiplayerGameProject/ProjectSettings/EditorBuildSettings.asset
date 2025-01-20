@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/City Beach.unity
-    guid: 6bd0f82ad06229049acabe0ae2bbdffe
+    path: Assets/Scenes/StartScreen.unity
+    guid: 25406e34534774293b9a7b1c60203c4e
   - enabled: 1
     path: Assets/Scenes/MovementTest.unity
     guid: 9929af407fb1140588785eef45d3251b
+  - enabled: 1
+    path: Assets/Scenes/LobbyMenu.unity
+    guid: a7c76687ba8434bd78ca8f287d6fdfd2
+  - enabled: 1
+    path: Assets/Scenes/City Beach.unity
+    guid: 6bd0f82ad06229049acabe0ae2bbdffe
   m_configObjects: {}

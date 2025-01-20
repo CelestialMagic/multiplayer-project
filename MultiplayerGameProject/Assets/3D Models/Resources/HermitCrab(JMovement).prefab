@@ -344,6 +344,8 @@ GameObject:
   - component: {fileID: 8721177868243308498}
   - component: {fileID: 6882556371700322775}
   - component: {fileID: 8445883237830248312}
+  - component: {fileID: 6997365214926849018}
+  - component: {fileID: 6009295586482022632}
   m_Layer: 0
   m_Name: HermitCrab(JMovement)
   m_TagString: Untagged
@@ -600,8 +602,53 @@ MonoBehaviour:
   rb: {fileID: 6882556371700322775}
   shellUI: {fileID: 6793128094291389621}
   shellText: {fileID: 5743086215324184119}
-  view: {fileID: 0}
-  colorPalettes: []
+  view: {fileID: 6997365214926849018}
+  colorPalettes:
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 1, g: 0.53873897, b: 0, a: 0}
+  - {r: 1, g: 0.8874891, b: 0, a: 0}
+  - {r: 0.32685256, g: 1, b: 0, a: 0}
+  - {r: 0, g: 0.29611325, b: 1, a: 0}
+  - {r: 0.55045414, g: 0, b: 1, a: 0}
+--- !u!114 &6997365214926849018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767957245811434281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 6009295586482022632}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &6009295586482022632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767957245811434281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &6793128094291389621
 GameObject:
   m_ObjectHideFlags: 0
