@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using TMPro;
 
 public class PlayerMovementJ : MonoBehaviour
 {
@@ -20,7 +21,7 @@ Player Fields
     private float sideInput, forwardInput;//Not currently used 
 
     [SerializeField]
-    private InputAction forwardMovement, sideMovement, meleeMovement, jumpMovement;//InputActions to be mapped to player actions
+    private InputAction forwardMovement, sideMovement, meleeMovement, jumpMovement, selectMovement;//InputActions to be mapped to player actions
 
     [SerializeField]
     private CinemachineVirtualCamera followCam;//The camera assigned to the player
@@ -48,6 +49,12 @@ Player Fields
 
     private bool isGrounded = false;//Checks if player can jump again 
 
+    [SerializeField]
+    private GameObject shellUI; //A popup for when player is in range of shells 
+
+    [SerializeField]
+    private TMP_Text shellText;//Display text for collided shells 
+
 
 
     // Start is called before the first frame update
@@ -74,6 +81,7 @@ Player Fields
         sideMovement.Enable();
         meleeMovement.Enable();
         jumpMovement.Enable();
+        selectMovement.Enable();
     }
 
 //Disables Input Actions
@@ -82,6 +90,7 @@ Player Fields
         sideMovement.Disable();
         meleeMovement.Disable();
         jumpMovement.Disable();
+        selectMovement.Disable();
     }
 
 void FixedUpdate(){
@@ -152,15 +161,33 @@ private void ModelRotation(){
     modelView.transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * viewSpeed, 0);
 }
 
-
+//Displays the Popup for the shell and ensures it does not appear when shell is the same as currently equipped 
 private void OnTriggerEnter(Collider collision){
+    if(collision.gameObject.tag == "Shell" && currentShell.GetComponent<Shell>().GetName() != collision.gameObject.GetComponent<Shell>().GetName()){
+        shellText.text = $"Press E to collect the {collision.gameObject.GetComponent<Shell>().GetName()}!";
+        shellUI.SetActive(true);
+    }
+
+
+}
+
+
+//Contains logic for remaining in range of the shell to collect 
+private void OnTriggerStay(Collider collision){
     Debug.Log("In Trigger");
 
 //Checks if collider is a shell 
     if(collision.gameObject.tag == "Shell"){
 
-        if(currentShell.GetComponent<Shell>().GetName() != collision.gameObject.GetComponent<Shell>().GetName()){
+        
+
+         if(currentShell.GetComponent<Shell>().GetName() != collision.gameObject.GetComponent<Shell>().GetName()){
+            shellText.text = $"Press E to collect the {collision.gameObject.GetComponent<Shell>().GetName()}!";
+
+         
+        if(selectMovement.ReadValue<float>() != 0){
             //Hides the shell currently equipped 
+            
 
             currentShell.SetActive(false);
             foreach(Shell s in playerShells)
@@ -176,10 +203,18 @@ private void OnTriggerEnter(Collider collision){
             }
 
             Destroy(collision.gameObject);
+            shellUI.SetActive(false);
+
 
         }
+        }
+
 
     }
+
+}
+private void OnTriggerExit(Collider collision){
+    shellUI.SetActive(false);
 
 }
 

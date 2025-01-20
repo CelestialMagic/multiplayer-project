@@ -521,17 +521,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1403528057719067276, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
-      propertyPath: jumpForce
-      value: 175
+    - target: {fileID: 1291266642340923480, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3631565119205776000, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -5495902117074765545, guid: 7153e4a4afff042c6a648822333c1865, type: 3}
+    - target: {fileID: 3090932837149085310, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -375.9724
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090932837149085310, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -187.98616
+      objectReference: {fileID: 0}
     - target: {fileID: 6767957245811434281, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
       propertyPath: m_Name
       value: HermitCrab(JMovement)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793128094291389621, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8721177868243308498, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -573,12 +581,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8897993058041084811, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3631565119205776000, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -651,6 +654,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapTakeoutBoxShell
       objectReference: {fileID: 0}
+    - target: {fileID: 6709398332533754300, guid: 8d2705941728c4af4a938dba3152a912, type: 3}
+      propertyPath: name
+      value: Takeout Box
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -717,6 +724,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
+--- !u!1 &1962250294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1962250297}
+  - component: {fileID: 1962250296}
+  - component: {fileID: 1962250295}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1962250295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962250294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1962250296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962250294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1962250297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962250294}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1975634745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -858,9 +933,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 324429559577903436, guid: 6beb025efa47444158f48d9e1740ab49, type: 3}
-    - {fileID: 1622811145317899357, guid: 6beb025efa47444158f48d9e1740ab49, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -913,6 +986,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5819673287865802261, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8683947871775244318, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
       propertyPath: m_Name
       value: MapBasicShell
@@ -936,3 +1013,4 @@ SceneRoots:
   - {fileID: 5890766519514828168}
   - {fileID: 237717672}
   - {fileID: 1688134924}
+  - {fileID: 1962250297}

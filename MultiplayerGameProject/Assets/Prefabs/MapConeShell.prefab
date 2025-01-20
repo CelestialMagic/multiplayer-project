@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d26915238f94e92be34f154954b7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: ConeShell
+  name: Cone
 --- !u!65 &2071373445808984668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -139,70 +139,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: -7677471772335586173, guid: 7153e4a4afff042c6a648822333c1865, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 324429559577903436}
-    - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: 7153e4a4afff042c6a648822333c1865, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1622811145317899357}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7153e4a4afff042c6a648822333c1865, type: 3}
---- !u!1 &422238717771199989 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 7153e4a4afff042c6a648822333c1865, type: 3}
-  m_PrefabInstance: {fileID: 1031452323662595985}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1622811145317899357
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422238717771199989}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 7153e4a4afff042c6a648822333c1865, type: 3}
 --- !u!4 &710105364499292282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7153e4a4afff042c6a648822333c1865, type: 3}
   m_PrefabInstance: {fileID: 1031452323662595985}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1955776605761585938 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -7677471772335586173, guid: 7153e4a4afff042c6a648822333c1865, type: 3}
-  m_PrefabInstance: {fileID: 1031452323662595985}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &324429559577903436
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955776605761585938}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6195245291975648998, guid: 7153e4a4afff042c6a648822333c1865, type: 3}

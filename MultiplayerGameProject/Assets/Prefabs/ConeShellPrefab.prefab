@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d26915238f94e92be34f154954b7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: ConeShell
+  name: Cone
 --- !u!1001 &1381684383781634821
 PrefabInstance:
   m_ObjectHideFlags: 0
