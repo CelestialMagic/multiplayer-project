@@ -521,25 +521,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1291266642340923480, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3090932837149085310, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -375.9724
-      objectReference: {fileID: 0}
-    - target: {fileID: 3090932837149085310, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -187.98616
-      objectReference: {fileID: 0}
     - target: {fileID: 6767957245811434281, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
       propertyPath: m_Name
       value: HermitCrab(JMovement)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6793128094291389621, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8721177868243308498, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
       propertyPath: m_LocalPosition.x
