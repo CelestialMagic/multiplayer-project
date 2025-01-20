@@ -682,7 +682,7 @@ MonoBehaviour:
   moveSpeed: 40
   rotationSpeed: 180
   groundDrag: 1
-  jumpForce: 4
+  jumpForce: 250
   orientation: {fileID: 3751583052324540482}
   forwardMovement:
     m_Name: Forward Movement
@@ -818,6 +818,14 @@ MonoBehaviour:
     - m_Name: 
       m_Id: 1e4f6f0c-2dfb-47ba-95fa-8550b2e85875
       m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump Movement
+      m_Flags: 0
+    - m_Name: 
+      m_Id: c6a6cff1-f145-4534-a07a-5d866e2fc0fd
+      m_Path: <Gamepad>/buttonNorth
       m_Interactions: 
       m_Processors: 
       m_Groups: 

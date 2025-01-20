@@ -523,7 +523,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1403528057719067276, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
       propertyPath: jumpForce
-      value: 30
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 3631565119205776000, guid: afe222479952d4f70a4c5324cd488b74, type: 3}
       propertyPath: m_Mesh
@@ -858,7 +858,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 324429559577903436, guid: 6beb025efa47444158f48d9e1740ab49, type: 3}
+    - {fileID: 1622811145317899357, guid: 6beb025efa47444158f48d9e1740ab49, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
