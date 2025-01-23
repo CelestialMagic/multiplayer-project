@@ -262,8 +262,8 @@ private void OnTriggerStay(Collider collision) {
                 //Compares currentShell to list of possible shells 
                 if(s.GetName() == collision.gameObject.GetComponent<Shell>().GetName()){
                     currentShell = s.gameObject;
-
-                    view.RPC("RPC_EquipShell", RpcTarget.All, true);
+                    
+                    //view.RPC("RPC_EquipShell", RpcTarget.All, true);
                     
                     //currentShell.SetActive(true);
                     break;
