@@ -62,6 +62,8 @@ Player Fields
     [SerializeField]
     private static List<GameObject> onlinePlayers = new List<GameObject>();//List of players currently online in lobby
 
+    private int currentShellIndex; 
+
 
 
     // Start is called before the first frame update
@@ -104,11 +106,18 @@ private void RPC_SendColor(Vector3 color){
 
 
 [PunRPC]
-private void RPC_EquipShell(bool activation){
+private void RPC_RemoveShell(int value){
     Debug.Log("Sending Shell RPC");
-    currentShell.SetActive(activation);
+    //
+    playerShells[value].gameObject.SetActive(false);
+    currentShell.SetActive(false);
 }
 
+[PunRPC]
+private void RPC_EquipShell(int value){
+    Debug.Log("Sending Shell RPC");
+    playerShells[value].gameObject.SetActive(true);
+}
 
 
 
@@ -254,16 +263,16 @@ private void OnTriggerStay(Collider collision) {
             //Hides the shell currently equipped 
 
             //if(view)
-                view.RPC("RPC_EquipShell", RpcTarget.All, false);
+                view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
             
             //currentShell.SetActive(false);
-            foreach(Shell s in playerShells)
+            for (int i = 0; i < playerShells.Count; i++)
             {
                 //Compares currentShell to list of possible shells 
-                if(s.GetName() == collision.gameObject.GetComponent<Shell>().GetName()){
-                    currentShell = s.gameObject;
-                    
-                    //view.RPC("RPC_EquipShell", RpcTarget.All, true);
+                if(playerShells[i].GetName() == collision.gameObject.GetComponent<Shell>().GetName()){
+                    currentShell = playerShells[i].gameObject;
+                    currentShellIndex = i; 
+                    view.RPC("RPC_EquipShell", RpcTarget.All, i);
                     
                     //currentShell.SetActive(true);
                     break;
