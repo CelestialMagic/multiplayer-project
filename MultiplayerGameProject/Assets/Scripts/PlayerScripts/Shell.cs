@@ -16,6 +16,7 @@ public class Shell : MonoBehaviour
     [PunRPC]
     private void DestroyShell(){
         PhotonNetwork.Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     

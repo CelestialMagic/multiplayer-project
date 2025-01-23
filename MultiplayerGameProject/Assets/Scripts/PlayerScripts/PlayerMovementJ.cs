@@ -105,6 +105,7 @@ private void RPC_SendColor(Vector3 color){
 
 [PunRPC]
 private void RPC_EquipShell(bool activation){
+    Debug.Log("Sending Shell RPC");
     currentShell.SetActive(activation);
 }
 
@@ -250,11 +251,7 @@ private void OnTriggerStay(Collider collision) {
         if(selectMovement.ReadValue<float>() != 0){
             //Hides the shell currently equipped 
 
-            
-
-            Debug.Log("Shell Name " + currentShell.name);
-
-            if(view)
+            //if(view)
                 view.RPC("RPC_EquipShell", RpcTarget.All, false);
             
             //currentShell.SetActive(false);
@@ -263,9 +260,8 @@ private void OnTriggerStay(Collider collision) {
                 //Compares currentShell to list of possible shells 
                 if(s.GetName() == collision.gameObject.GetComponent<Shell>().GetName()){
                     currentShell = s.gameObject;
-                    
-                    if(view)
-                        view.RPC("RPC_EquipShell", RpcTarget.All, true);
+
+                    view.RPC("RPC_EquipShell", RpcTarget.All, true);
                     
                     //currentShell.SetActive(true);
                     break;
