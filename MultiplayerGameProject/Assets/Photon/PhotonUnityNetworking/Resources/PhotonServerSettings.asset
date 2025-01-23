@@ -40,6 +40,9 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - RPC_SendColor
+  - RPC_CollectShell
+  - DestroyShell
+  - RPC_EquipShell
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

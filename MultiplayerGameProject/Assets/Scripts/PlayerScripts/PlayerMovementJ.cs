@@ -101,6 +101,14 @@ private void RPC_SendColor(Vector3 color){
                 m.material.color = new Color(color.x, color.y, color.z);
         }
 }
+
+
+[PunRPC]
+private void RPC_EquipShell(bool activation){
+    currentShell.SetActive(activation);
+}
+
+
 //Resets the list of active players
 private void OnDestroy(){
     {
@@ -227,7 +235,7 @@ private void OnTriggerEnter(Collider collision){
 
 //Contains logic for remaining in range of the shell to collect 
 private void OnTriggerStay(Collider collision) {
-    Debug.Log("In Trigger");
+    //Debug.Log("In Trigger");
 
 //Checks if collider is a shell 
     if(collision.gameObject.tag == "Shell"){
@@ -240,22 +248,35 @@ private void OnTriggerStay(Collider collision) {
          
         if(selectMovement.ReadValue<float>() != 0){
             //Hides the shell currently equipped 
+
             
 
-            currentShell.SetActive(false);
+            Debug.Log("Shell Name " + currentShell.name);
+
+            if(view)
+                view.RPC("RPC_EquipShell", RpcTarget.All, false);
+            
+            //currentShell.SetActive(false);
             foreach(Shell s in playerShells)
             {
                 //Compares currentShell to list of possible shells 
                 if(s.GetName() == collision.gameObject.GetComponent<Shell>().GetName()){
                     currentShell = s.gameObject;
-                    currentShell.SetActive(true);
+                    
+
+                    if(view)
+                        view.RPC("RPC_EquipShell", RpcTarget.All, true);
+                    
+                    //currentShell.SetActive(true);
                     break;
                     //Ends loop when found 
                 }
                 
             }
 
-            Destroy(collision.gameObject);
+            PhotonView photonView = collision.gameObject.GetComponent<PhotonView>();
+            if(photonView)
+                photonView.RPC("DestroyShell", RpcTarget.All);
             shellUI.SetActive(false);
 
 

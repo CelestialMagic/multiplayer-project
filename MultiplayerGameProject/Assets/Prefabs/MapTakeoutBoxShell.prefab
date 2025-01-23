@@ -9,16 +9,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e45fc3a2328024661981d95d949f6739, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.54534
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e45fc3a2328024661981d95d949f6739, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.54534
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e45fc3a2328024661981d95d949f6739, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.54534
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e45fc3a2328024661981d95d949f6739, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.9671912
+      value: -8.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e45fc3a2328024661981d95d949f6739, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000009536743
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e45fc3a2328024661981d95d949f6739, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.79088
+      value: 13.85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e45fc3a2328024661981d95d949f6739, type: 3}
       propertyPath: m_LocalRotation.w
@@ -47,6 +59,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e45fc3a2328024661981d95d949f6739, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e45fc3a2328024661981d95d949f6739, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8143710011712545758, guid: e45fc3a2328024661981d95d949f6739, type: 3}
       propertyPath: m_Materials.Array.size
@@ -122,6 +138,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e45fc3a2328024661981d95d949f6739, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6709398332533754300}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e45fc3a2328024661981d95d949f6739, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2122472356999982685}
   m_SourcePrefab: {fileID: 100100000, guid: e45fc3a2328024661981d95d949f6739, type: 3}
 --- !u!1 &4366848631044866542 stripped
 GameObject:
@@ -161,4 +180,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d26915238f94e92be34f154954b7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: TakeoutBoxShell
+  name: Takeout Box
+--- !u!114 &2122472356999982685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4366848631044866542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
