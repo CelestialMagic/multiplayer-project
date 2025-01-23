@@ -246,6 +246,7 @@ private void OnTriggerStay(Collider collision) {
             shellText.text = $"Press E to collect the {collision.gameObject.GetComponent<Shell>().GetName()}!";
 
          
+         if(view.IsMine){
         if(selectMovement.ReadValue<float>() != 0){
             //Hides the shell currently equipped 
 
@@ -263,7 +264,6 @@ private void OnTriggerStay(Collider collision) {
                 if(s.GetName() == collision.gameObject.GetComponent<Shell>().GetName()){
                     currentShell = s.gameObject;
                     
-
                     if(view)
                         view.RPC("RPC_EquipShell", RpcTarget.All, true);
                     
@@ -282,11 +282,12 @@ private void OnTriggerStay(Collider collision) {
 
         }
         }
+        }
 
-
+    }
 
 }
-}
+
 private void OnTriggerExit(Collider collision){
     shellUI.SetActive(false);
 
