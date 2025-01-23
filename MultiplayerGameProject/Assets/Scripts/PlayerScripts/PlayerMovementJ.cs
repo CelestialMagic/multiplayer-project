@@ -110,6 +110,8 @@ private void RPC_EquipShell(bool activation){
 }
 
 
+
+
 //Resets the list of active players
 private void OnDestroy(){
     {
