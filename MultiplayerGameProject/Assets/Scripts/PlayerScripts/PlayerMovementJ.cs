@@ -395,7 +395,7 @@ private void RPC_DamageVolumeEnable(bool value){
 IEnumerator Respawning(){
 
     view.RPC("RPC_Respawn", RpcTarget.All);
-    
+    view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
     view.RPC("RPC_VisibleAgain", RpcTarget.All);
     yield return new WaitForSeconds(0.1f);
     
