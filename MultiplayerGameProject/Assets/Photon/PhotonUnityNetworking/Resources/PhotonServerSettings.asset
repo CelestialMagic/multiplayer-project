@@ -48,6 +48,7 @@ MonoBehaviour:
   - RPC_Respawn
   - RPC_DamageVolumeEnable
   - RPC_TakeDamage
+  - RPC_VisibleAgain
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

@@ -137,6 +137,14 @@ private void RPC_Respawn(){
 }
 
 
+[PunRPC]
+private void RPC_VisibleAgain(){
+    this.gameObject.SetActive(true);
+    playerShells[0].gameObject.SetActive(true);
+    
+}
+
+
 
 [PunRPC]
 private void RPC_EquipShell(int value){
@@ -327,12 +335,20 @@ private void OnTriggerStay(Collider collision) {
 
     }else if (collision.gameObject.tag == "Claws"){
         if(view){
-            if(collision.gameObject != this.damageVolume)
-                view.RPC("RPC_TakeDamage", RpcTarget.All);
-        }
+            if(collision.gameObject != this.damageVolume){
+                if(hasShell == false){
+                StartCoroutine(Respawning());
+                }else{
+                hasShell = false;
+                view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
+
+            }
+                
+             }
         
     }
 
+}
 }
 
 private void OnTriggerExit(Collider collision){
@@ -356,20 +372,7 @@ private void OnCollisionExit(Collision collision){
 }
 
 //Potential RPC Call
-[PunRPC]
-private void RPC_TakeDamage(){
-    
-    if(hasShell == false){
-        view.RPC("RPC_Respawn", RpcTarget.All);
 
-
-    }else{
-        hasShell = false;
-        view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
-
-    }
-    
-}
 
 
 [PunRPC]
@@ -389,8 +392,15 @@ private void RPC_DamageVolumeEnable(bool value){
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true; 
     }
+IEnumerator Respawning(){
 
-
-
+    view.RPC("RPC_Respawn", RpcTarget.All);
+    
+    view.RPC("RPC_VisibleAgain", RpcTarget.All);
+    yield return new WaitForSeconds(0.1f);
+    
+    
 
 }
+}
+
