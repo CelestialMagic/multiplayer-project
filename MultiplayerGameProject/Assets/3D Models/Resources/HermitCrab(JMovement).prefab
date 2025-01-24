@@ -1149,6 +1149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Can
+  info: 
 --- !u!114 &5402031575057910526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1902,6 +1903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Basic Shell
+  info: 
 --- !u!114 &6184614120001812085
 MonoBehaviour:
   m_ObjectHideFlags: 0
