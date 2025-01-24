@@ -823,10 +823,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67ae672e261e40af8c13ff1a8406923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: -1
-  controller: {fileID: 0}
   moveSpeed: 10
   rotationSpeed: 180
+  groundDrag: 0
+  orientation: {fileID: 0}
   forwardMovement:
     m_Name: Forward Movement
     m_Type: 0
@@ -902,7 +902,11 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  followCam: {fileID: 0}
+  viewSpeed: 0
+  viewRange: 0
   prefab: {fileID: 0}
+  modelView: {fileID: 0}
   color: {r: 1, g: 0.033018887, b: 0.24742185, a: 0}
   rb: {fileID: 1706108124619678731}
 --- !u!54 &1706108124619678731

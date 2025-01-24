@@ -46,6 +46,8 @@ MonoBehaviour:
   - RPC_EquipNewShell
   - RPC_RemoveShell
   - RPC_Respawn
+  - RPC_DamageVolumeEnable
+  - RPC_TakeDamage
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

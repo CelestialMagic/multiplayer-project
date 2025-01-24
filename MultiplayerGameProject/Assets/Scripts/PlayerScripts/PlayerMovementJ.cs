@@ -66,6 +66,19 @@ Player Fields
 
     private bool hasShell = true; 
 
+[SerializeField]
+    private GameObject damageVolume;//A volume for damaging 
+
+
+    public float attackRange = 2f; // Range of the melee attack
+    public float attackAngle = 60f; // Angle of the attack cone
+
+    public float attackCooldown = 0.5f; // Cooldown time between attacks
+
+    private float lastAttackTime = 0f; // Tracks the time of the last attack
+
+    private bool canAttack = true;
+
 
 
     // Start is called before the first frame update
@@ -185,6 +198,12 @@ if (view.IsMine){
 
 private void Update(){
 if (view.IsMine){
+    if(meleeMovement.ReadValue<float>() != 0 && canAttack == true){
+        StartCoroutine(AttackPeriod());
+        
+
+    }
+        
     sideInput = GetSideInput();
     forwardInput = GetForwardInput();
     SpeedControl();
@@ -196,6 +215,8 @@ if (view.IsMine){
     if(jumpMovement.ReadValue<float>() != 0 && isGrounded == true){
         rb.AddForce(Vector3.up * jumpForce);
     }
+
+    
 }
     
 
@@ -251,7 +272,8 @@ private void OnTriggerEnter(Collider collision){
     if(collision.gameObject.tag == "Shell" && currentShell.GetComponent<Shell>().GetName() != collision.gameObject.GetComponent<Shell>().GetName()){
         shellText.text = $"Press E to collect the {collision.gameObject.GetComponent<Shell>().GetName()}!";
         shellUI.SetActive(true);
-    }
+    }else if (collision.gameObject.tag == "Claws" && collision.gameObject != this.damageVolume)
+        Debug.Log("Uh oh! Claws!");
 
 
 }
@@ -303,6 +325,12 @@ private void OnTriggerStay(Collider collision) {
         }
         }
 
+    }else if (collision.gameObject.tag == "Claws"){
+        if(view){
+            if(collision.gameObject != this.damageVolume)
+                view.RPC("RPC_TakeDamage", RpcTarget.All);
+        }
+        
     }
 
 }
@@ -327,8 +355,10 @@ private void OnCollisionExit(Collision collision){
     Debug.Log(isGrounded);
 }
 
-public void TakeDamage(){
-    if(view){
+//Potential RPC Call
+[PunRPC]
+private void RPC_TakeDamage(){
+    
     if(hasShell == false){
         view.RPC("RPC_Respawn", RpcTarget.All);
 
@@ -338,8 +368,28 @@ public void TakeDamage(){
         view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
 
     }
-    }
+    
 }
+
+
+[PunRPC]
+private void RPC_DamageVolumeEnable(bool value){
+    
+    damageVolume.SetActive(value);
+    
+}
+
+
+ IEnumerator AttackPeriod()
+    {
+        canAttack = false; 
+        view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, true);
+        yield return new WaitForSeconds(3);
+        view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true; 
+    }
+
 
 
 
