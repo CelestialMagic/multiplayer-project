@@ -64,6 +64,8 @@ Player Fields
 
     private int currentShellIndex; 
 
+    private bool hasShell = true; 
+
 
 
     // Start is called before the first frame update
@@ -112,6 +114,16 @@ private void RPC_RemoveShell(int value){
     playerShells[value].gameObject.SetActive(false);
     currentShell.SetActive(false);
 }
+
+[PunRPC]
+private void RPC_Respawn(){
+    Debug.Log("Respawning");
+    //
+    this.gameObject.SetActive(false);
+    this.gameObject.transform.position = new Vector3(0, 10, 0);
+}
+
+
 
 [PunRPC]
 private void RPC_EquipShell(int value){
@@ -313,6 +325,20 @@ private void OnCollisionStay(Collision collision){
 private void OnCollisionExit(Collision collision){
     isGrounded = false; 
     Debug.Log(isGrounded);
+}
+
+public void TakeDamage(){
+    if(view){
+    if(hasShell == false){
+        view.RPC("RPC_Respawn", RpcTarget.All);
+
+
+    }else{
+        hasShell = false;
+        view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
+
+    }
+    }
 }
 
 

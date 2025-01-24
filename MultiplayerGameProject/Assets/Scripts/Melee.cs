@@ -39,6 +39,9 @@ public class MeleeAttack : MonoBehaviour
             if (angleToTarget <= attackAngle / 2)
             {
                 Debug.Log($"Player hit: {collider.name}");
+                //To be used for taking damage
+                //if(collider.gameObject.GetComponent<PlayerMovementJ>() != null)
+                    //collider.GetComponent<PlayerMovementJ>().TakeDamage(); 
             }
         }
     }
