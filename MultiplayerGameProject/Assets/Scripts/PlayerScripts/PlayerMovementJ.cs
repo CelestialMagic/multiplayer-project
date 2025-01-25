@@ -279,7 +279,7 @@ private void ModelRotation(){
 private void OnTriggerEnter(Collider collision){
     if(collision.gameObject.tag == "Shell" && currentShell.GetComponent<Shell>().GetName() != collision.gameObject.GetComponent<Shell>().GetName()){
         shellText.text = $"Press E to collect the {collision.gameObject.GetComponent<Shell>().GetName()}!";
-        shellUI.SetActive(true);
+        //shellUI.SetActive(true);
     }else if (collision.gameObject.tag == "Claws" && collision.gameObject != this.damageVolume)
         Debug.Log("Uh oh! Claws!");
 
@@ -326,7 +326,7 @@ private void OnTriggerStay(Collider collision) {
             PhotonView photonView = collision.gameObject.GetComponent<PhotonView>();
             if(photonView)
                 photonView.RPC("DestroyShell", RpcTarget.All);
-            shellUI.SetActive(false);
+            //shellUI.SetActive(false);
 
 
         }
@@ -352,7 +352,7 @@ private void OnTriggerStay(Collider collision) {
 }
 
 private void OnTriggerExit(Collider collision){
-    shellUI.SetActive(false);
+    //shellUI.SetActive(false);
 
 }
 
@@ -394,6 +394,7 @@ private void RPC_DamageVolumeEnable(bool value){
     }
 IEnumerator Respawning(){
 
+    view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
     view.RPC("RPC_Respawn", RpcTarget.All);
     view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
     view.RPC("RPC_VisibleAgain", RpcTarget.All);
