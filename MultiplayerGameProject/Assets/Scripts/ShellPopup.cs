@@ -32,8 +32,14 @@ public class ShellPopup : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision){
         shellCanvas.SetActive(true);
+        
     }
+
     private void OnTriggerExit(Collider collision){
         shellCanvas.SetActive(false);
+    }
+
+    void LateUpdate(){
+        shellCanvas.transform.LookAt(shellCanvas.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
     }
 }
