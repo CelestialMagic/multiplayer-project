@@ -200,6 +200,12 @@ void FixedUpdate(){
 
 if (view.IsMine){
     MovePlayer();
+    
+    
+    if(jumpMovement.ReadValue<float>() != 0 && isGrounded == true){
+        rb.AddForce(Vector3.up * jumpForce);
+    }
+
 }
     
 }
@@ -216,14 +222,15 @@ if (view.IsMine){
     forwardInput = GetForwardInput();
     SpeedControl();
 
+    SimpleRotation();
+
+    
+
     rb.drag = groundDrag; 
 
-        SimpleRotation();
+        
 
-    if(jumpMovement.ReadValue<float>() != 0 && isGrounded == true){
-        rb.AddForce(Vector3.up * jumpForce);
-    }
-
+    
     
 }
     
