@@ -649,6 +649,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Melee Movement
       m_Flags: 0
+    - m_Name: 
+      m_Id: c4232f4f-c317-4187-970f-53d4cd08c801
+      m_Path: <Gamepad>/buttonNorth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Melee Movement
+      m_Flags: 0
     m_Flags: 0
   jumpMovement:
     m_Name: Jump Movement
@@ -668,7 +676,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: c6a6cff1-f145-4534-a07a-5d866e2fc0fd
-      m_Path: <Gamepad>/buttonNorth
+      m_Path: <Gamepad>/buttonWest
       m_Interactions: 
       m_Processors: 
       m_Groups: 
