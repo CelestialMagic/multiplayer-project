@@ -79,6 +79,9 @@ Player Fields
 
     private bool canAttack = true;
 
+[SerializeField]
+    private PlayerInfoDisplay playerUI;
+
 
 
     // Start is called before the first frame update
@@ -87,6 +90,7 @@ Player Fields
         
         //Locks cursor for rotating with mouse (commented out for now)
         //Cursor.lockState = CursorLockMode.Locked;
+        playerUI = GameObject.FindObjectOfType<PlayerInfoDisplay>();
 
     if(!view.IsMine){
     followCam.enabled = false;
@@ -131,8 +135,8 @@ private void RPC_RemoveShell(int value){
 [PunRPC]
 private void RPC_Respawn(){
     Debug.Log("Respawning");
-    //
     this.gameObject.SetActive(false);
+    currentShell = playerShells[0].gameObject;
     this.gameObject.transform.position = new Vector3(0, 10, 0);
 }
 
@@ -227,6 +231,7 @@ if (view.IsMine){
     
 
     rb.drag = groundDrag; 
+    playerUI.SetCurrentShellText(currentShell.GetComponent<Shell>().GetName());
 
         
 
@@ -394,7 +399,7 @@ private void RPC_DamageVolumeEnable(bool value){
     {
         canAttack = false; 
         view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true; 
@@ -403,12 +408,15 @@ IEnumerator Respawning(){
 
     view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
     view.RPC("RPC_Respawn", RpcTarget.All);
-    view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
+    //view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
     view.RPC("RPC_VisibleAgain", RpcTarget.All);
     yield return new WaitForSeconds(0.1f);
     
     
 
 }
+
+
+
 }
 

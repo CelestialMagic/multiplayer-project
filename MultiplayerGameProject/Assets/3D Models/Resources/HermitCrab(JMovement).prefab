@@ -736,6 +736,7 @@ MonoBehaviour:
   attackRange: 2
   attackAngle: 60
   attackCooldown: 2
+  playerUI: {fileID: 0}
 --- !u!114 &6997365214926849018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2083,6 +2084,7 @@ MonoBehaviour:
   attackRange: 2
   attackAngle: 60
   attackCooldown: 0.5
+  playerUI: {fileID: 0}
 --- !u!1 &5659922239014045668 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2476206356587550820, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}

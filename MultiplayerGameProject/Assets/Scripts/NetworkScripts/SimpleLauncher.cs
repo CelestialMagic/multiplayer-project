@@ -30,7 +30,7 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
 
     }
     public override void OnJoinedRoom(){
-        PhotonNetwork.Instantiate(playerPrefab.name, location ,Quaternion.identity);
+        PhotonNetwork.Instantiate(playerPrefab.name, location, Quaternion.identity);
     }
 
     public override void OnLeftRoom()
