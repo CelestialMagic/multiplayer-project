@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Photon.Pun;
 
 public class SimpleLauncher : MonoBehaviourPunCallbacks
 {
     [SerializeField]
-    private GameObject playerPrefab;
+    private GameObject playerPrefab, gameUI;
 
     [SerializeField]
     private Vector3 location; 
@@ -26,6 +27,18 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom(){
         PhotonNetwork.Instantiate(playerPrefab.name, location ,Quaternion.identity);
+    }
+
+    public override void OnLeftRoom()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    //Code used when leaving room
+    public void LeaveRoom()
+    {
+        Debug.Log(PhotonNetwork.LeaveRoom());
+        
     }
 
     
