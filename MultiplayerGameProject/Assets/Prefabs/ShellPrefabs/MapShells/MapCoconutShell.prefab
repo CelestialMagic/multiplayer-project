@@ -433,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c3e7b055723e14312803cf5022e7dbff, type: 2}
     - target: {fileID: 919132149155446097, guid: 923e0448ad3f54b24a0a36a96dd6c856, type: 3}
       propertyPath: m_Name
-      value: CoconutShell
+      value: MapCoconutShell
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 923e0448ad3f54b24a0a36a96dd6c856, type: 3}
       propertyPath: m_TagString
@@ -451,6 +451,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7071182760956848314, guid: 923e0448ad3f54b24a0a36a96dd6c856, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3e7b055723e14312803cf5022e7dbff, type: 2}
     - target: {fileID: 7071182760956848314, guid: 923e0448ad3f54b24a0a36a96dd6c856, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
