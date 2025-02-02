@@ -133,6 +133,14 @@ private void RPC_RemoveShell(int value){
 }
 
 [PunRPC]
+private void RPC_DeactivateAllShells(){
+    foreach(Shell s in playerShells){
+        s.gameObject.SetActive(false);
+    }
+
+}
+
+[PunRPC]
 private void RPC_Respawn(){
     Debug.Log("Respawning");
     this.gameObject.SetActive(false);
@@ -406,7 +414,7 @@ private void RPC_DamageVolumeEnable(bool value){
     }
 IEnumerator Respawning(){
 
-    view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
+    view.RPC("RPC_DeactivateAllShells", RpcTarget.All);
     view.RPC("RPC_Respawn", RpcTarget.All);
     //view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
     view.RPC("RPC_VisibleAgain", RpcTarget.All);
