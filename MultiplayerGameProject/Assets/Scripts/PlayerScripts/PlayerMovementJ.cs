@@ -69,6 +69,9 @@ Player Fields
 [SerializeField]
     private GameObject damageVolume;//A volume for damaging 
 
+    [SerializeField]
+    private SphereCollider sphereCollider;//The sphere collider to modify size
+
 
     public float attackRange = 2f; // Range of the melee attack
     public float attackAngle = 60f; // Angle of the attack cone
@@ -213,9 +216,9 @@ void FixedUpdate(){
 if (view.IsMine){
     MovePlayer();
     
-    
+    //Jumping with Modifier
     if(jumpMovement.ReadValue<float>() != 0 && isGrounded == true){
-        rb.AddForce(Vector3.up * jumpForce);
+        rb.AddForce(Vector3.up * (jumpForce * currentShell.GetComponent<Shell>().GetJumpModifier()));
     }
 
 }
@@ -240,6 +243,8 @@ if (view.IsMine){
 
     rb.drag = groundDrag; 
     playerUI.SetCurrentShellText(currentShell.GetComponent<Shell>().GetName());
+
+    sphereCollider.radius *= currentShell.GetComponent<Shell>().GetAttackRadiusModifier();
 
         
 

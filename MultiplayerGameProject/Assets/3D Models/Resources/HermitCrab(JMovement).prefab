@@ -733,6 +733,7 @@ MonoBehaviour:
   - {r: 0, g: 0.29611325, b: 1, a: 0}
   - {r: 0.55045414, g: 0, b: 1, a: 0}
   damageVolume: {fileID: 8301184188585301129}
+  sphereCollider: {fileID: 3943733178957838469}
   attackRange: 2
   attackAngle: 60
   attackCooldown: 2
@@ -1161,6 +1162,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Can
   info: 
+  speedModifier: 0
+  jumpModifier: 0
+  healthModifier: 0
+  attackRadiusModifier: 0
 --- !u!114 &5402031575057910526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2081,6 +2086,7 @@ MonoBehaviour:
   view: {fileID: 0}
   colorPalettes: []
   damageVolume: {fileID: 0}
+  sphereCollider: {fileID: 0}
   attackRange: 2
   attackAngle: 60
   attackCooldown: 0.5
@@ -2104,6 +2110,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Basic Shell
   info: 
+  speedModifier: 1
+  jumpModifier: 1
+  healthModifier: 1
+  attackRadiusModifier: 1
 --- !u!114 &6184614120001812085
 MonoBehaviour:
   m_ObjectHideFlags: 0

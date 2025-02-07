@@ -121,3 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Basic Shell
+  info: 
+  speedModifier: 1
+  jumpModifier: 1
+  healthModifier: 1
+  attackRadiusModifier: 1
