@@ -66,17 +66,22 @@ Player Fields
 
     private bool hasShell = true; 
 
+    private bool vulnerable = false; 
+
 [SerializeField]
     private GameObject damageVolume;//A volume for damaging 
 
     [SerializeField]
-    private SphereCollider sphereCollider;//The sphere collider to modify size
+    private float invulnerabilityTime;
+
+
 
 
     public float attackRange = 2f; // Range of the melee attack
     public float attackAngle = 60f; // Angle of the attack cone
 
     public float attackCooldown = 0.5f; // Cooldown time between attacks
+
 
     private float lastAttackTime = 0f; // Tracks the time of the last attack
 
@@ -164,7 +169,22 @@ private void RPC_VisibleAgain(){
 [PunRPC]
 private void RPC_EquipShell(int value){
     Debug.Log("Sending Shell RPC");
+    vulnerable = false; 
     playerShells[value].gameObject.SetActive(true);
+}
+
+[PunRPC]
+private void RPC_DamageVolumeEnable(bool value){
+    
+    damageVolume.SetActive(value);
+    
+}
+
+[PunRPC]
+private void RPC_ShowDamageScale(float value){
+    
+    damageVolume.transform.localScale = new Vector3(2 * value, 2 * value, 2 * value);
+    
 }
 
 
@@ -359,11 +379,12 @@ private void OnTriggerStay(Collider collision) {
     }else if (collision.gameObject.tag == "Claws"){
         if(view){
             if(collision.gameObject != this.damageVolume){
-                if(hasShell == false){
+                if(vulnerable){
                 StartCoroutine(Respawning());
                 }else{
-                hasShell = false;
                 view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
+                StartCoroutine(Invulnerability());
+
 
             }
                 
@@ -398,19 +419,7 @@ private void OnCollisionExit(Collision collision){
 
 
 
-[PunRPC]
-private void RPC_DamageVolumeEnable(bool value){
-    
-    damageVolume.SetActive(value);
-    
-}
 
-[PunRPC]
-private void RPC_ShowDamageScale(float value){
-    
-    damageVolume.transform.localScale = new Vector3(2 * value, 2 * value, 2 * value);
-    
-}
 
 
 
@@ -429,7 +438,19 @@ IEnumerator Respawning(){
     view.RPC("RPC_Respawn", RpcTarget.All);
     //view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
     view.RPC("RPC_VisibleAgain", RpcTarget.All);
+    vulnerable = false; 
+    
     yield return new WaitForSeconds(0.1f);
+    
+    
+
+}
+
+IEnumerator Invulnerability(){
+
+    
+    yield return new WaitForSeconds(invulnerabilityTime);
+    vulnerable = true; 
     
     
 

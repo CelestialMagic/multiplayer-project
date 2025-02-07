@@ -733,7 +733,7 @@ MonoBehaviour:
   - {r: 0, g: 0.29611325, b: 1, a: 0}
   - {r: 0.55045414, g: 0, b: 1, a: 0}
   damageVolume: {fileID: 8301184188585301129}
-  sphereCollider: {fileID: 3943733178957838469}
+  invulnerabilityTime: 2
   attackRange: 2
   attackAngle: 60
   attackCooldown: 2
@@ -2134,7 +2134,7 @@ MonoBehaviour:
   view: {fileID: 0}
   colorPalettes: []
   damageVolume: {fileID: 0}
-  sphereCollider: {fileID: 0}
+  invulnerabilityTime: 0
   attackRange: 2
   attackAngle: 60
   attackCooldown: 0.5
