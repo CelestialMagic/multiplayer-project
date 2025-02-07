@@ -244,8 +244,8 @@ if (view.IsMine){
     rb.drag = groundDrag; 
     playerUI.SetCurrentShellText(currentShell.GetComponent<Shell>().GetName());
 
-    sphereCollider.radius *= currentShell.GetComponent<Shell>().GetAttackRadiusModifier();
-
+    //sphereCollider.radius *= currentShell.GetComponent<Shell>().GetAttackRadiusModifier();
+    damageVolume.transform.localScale = new Vector3(2 * currentShell.GetComponent<Shell>().GetAttackRadiusModifier(), 2 *currentShell.GetComponent<Shell>().GetAttackRadiusModifier(), 2 *currentShell.GetComponent<Shell>().GetAttackRadiusModifier());
         
 
     
@@ -257,7 +257,7 @@ if (view.IsMine){
 
 private void MovePlayer(){
     moveDirection = orientation.forward * GetForwardInput() + orientation.right * GetSideInput(); 
-    rb.AddForce(moveDirection.normalized * moveSpeed, ForceMode.Force);
+    rb.AddForce(moveDirection.normalized * (moveSpeed * currentShell.GetComponent<Shell>().GetSpeedModifier()), ForceMode.Force);
 }
 
 //Gets the side input of the player 

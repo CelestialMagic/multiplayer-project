@@ -1162,10 +1162,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Can
   info: 
-  speedModifier: 0
-  jumpModifier: 0
-  healthModifier: 0
-  attackRadiusModifier: 0
+  speedModifier: 1
+  jumpModifier: 1
+  healthModifier: 1
+  attackRadiusModifier: 2
 --- !u!114 &5402031575057910526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,6 +1201,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3751583052324540482}
     m_Modifications:
+    - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
+      propertyPath: jumpModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
+      propertyPath: speedModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
+      propertyPath: healthModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
+      propertyPath: attackRadiusModifier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4692717304357952162, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
       propertyPath: m_Name
       value: CoconutShell
@@ -1318,6 +1334,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4781976201800179722, guid: 3fd911e00d1c74e80bbec715a16dd349, type: 3}
+      propertyPath: jumpModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781976201800179722, guid: 3fd911e00d1c74e80bbec715a16dd349, type: 3}
+      propertyPath: speedModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781976201800179722, guid: 3fd911e00d1c74e80bbec715a16dd349, type: 3}
+      propertyPath: healthModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781976201800179722, guid: 3fd911e00d1c74e80bbec715a16dd349, type: 3}
+      propertyPath: attackRadiusModifier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9017199617438105044, guid: 3fd911e00d1c74e80bbec715a16dd349, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.564
@@ -1417,6 +1449,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3751583052324540482}
     m_Modifications:
+    - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
+      propertyPath: jumpModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
+      propertyPath: speedModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
+      propertyPath: healthModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
+      propertyPath: attackRadiusModifier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8510086952140526418, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.84115523
@@ -2164,6 +2212,22 @@ PrefabInstance:
     - target: {fileID: 1461174338719829573, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
       propertyPath: name
       value: Takeout Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461174338719829573, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
+      propertyPath: jumpModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461174338719829573, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
+      propertyPath: speedModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461174338719829573, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
+      propertyPath: healthModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461174338719829573, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
+      propertyPath: attackRadiusModifier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1490197450089334083, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
       propertyPath: m_Layer
