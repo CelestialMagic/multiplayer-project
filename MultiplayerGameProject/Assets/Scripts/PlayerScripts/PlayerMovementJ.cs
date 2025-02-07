@@ -245,9 +245,7 @@ if (view.IsMine){
     playerUI.SetCurrentShellText(currentShell.GetComponent<Shell>().GetName());
 
     //sphereCollider.radius *= currentShell.GetComponent<Shell>().GetAttackRadiusModifier();
-    damageVolume.transform.localScale = new Vector3(2 * currentShell.GetComponent<Shell>().GetAttackRadiusModifier(), 2 *currentShell.GetComponent<Shell>().GetAttackRadiusModifier(), 2 *currentShell.GetComponent<Shell>().GetAttackRadiusModifier());
-        
-
+    view.RPC("RPC_ShowDamageScale", RpcTarget.All, currentShell.GetComponent<Shell>().GetAttackRadiusModifier());
     
     
 }
@@ -406,6 +404,14 @@ private void RPC_DamageVolumeEnable(bool value){
     damageVolume.SetActive(value);
     
 }
+
+[PunRPC]
+private void RPC_ShowDamageScale(float value){
+    
+    damageVolume.transform.localScale = new Vector3(2 * value, 2 * value, 2 * value);
+    
+}
+
 
 
  IEnumerator AttackPeriod()
