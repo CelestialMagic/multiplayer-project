@@ -93,6 +93,8 @@ Player Fields
 [SerializeField]
 private Shell blankShell; 
 
+private int timesHit = 0; 
+
 
 
     // Start is called before the first frame update
@@ -141,6 +143,7 @@ private void RPC_RemoveShell(int value){
     //
     playerShells[value].gameObject.SetActive(false);
     currentShell.SetActive(false);
+    currentShell = blankShell.gameObject; 
 }
 
 [PunRPC]
@@ -386,8 +389,14 @@ private void OnTriggerStay(Collider collision) {
                 if(vulnerable){
                 StartCoroutine(Respawning());
                 }else{
-                view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
-                StartCoroutine(Invulnerability());
+                if(timesHit >= currentShell.GetComponent<Shell>().GetHealthModifier()){
+                    view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
+                    
+                }else{
+                    timesHit++; 
+                    StartCoroutine(Invulnerability());
+                }
+                
 
 
             }
@@ -437,6 +446,8 @@ private void OnCollisionExit(Collision collision){
         canAttack = true; 
     }
 IEnumerator Respawning(){
+    //Resets hit ability to destroy shell
+    timesHit = 0; 
 
     view.RPC("RPC_DeactivateAllShells", RpcTarget.All);
     view.RPC("RPC_Respawn", RpcTarget.All);
@@ -452,7 +463,7 @@ IEnumerator Respawning(){
 
 IEnumerator Invulnerability(){
 
-    currentShell = blankShell.gameObject; 
+    
     yield return new WaitForSeconds(invulnerabilityTime);
     vulnerable = true; 
     
