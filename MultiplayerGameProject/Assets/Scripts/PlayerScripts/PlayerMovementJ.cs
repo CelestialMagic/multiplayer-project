@@ -90,6 +90,9 @@ Player Fields
 [SerializeField]
     private PlayerInfoDisplay playerUI;
 
+[SerializeField]
+private Shell blankShell; 
+
 
 
     // Start is called before the first frame update
@@ -145,6 +148,7 @@ private void RPC_DeactivateAllShells(){
     foreach(Shell s in playerShells){
         s.gameObject.SetActive(false);
     }
+    currentShell = blankShell.gameObject; 
 
 }
 
@@ -448,7 +452,7 @@ IEnumerator Respawning(){
 
 IEnumerator Invulnerability(){
 
-    
+    currentShell = blankShell.gameObject; 
     yield return new WaitForSeconds(invulnerabilityTime);
     vulnerable = true; 
     
