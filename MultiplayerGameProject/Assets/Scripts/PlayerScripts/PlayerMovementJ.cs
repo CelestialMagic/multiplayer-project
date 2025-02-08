@@ -393,7 +393,6 @@ private void OnTriggerStay(Collider collision) {
                     view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
                     
                 }else{
-                    timesHit++; 
                     StartCoroutine(Invulnerability());
                 }
                 
@@ -463,7 +462,7 @@ IEnumerator Respawning(){
 
 IEnumerator Invulnerability(){
 
-    
+    timesHit++; 
     yield return new WaitForSeconds(invulnerabilityTime);
     vulnerable = true; 
     

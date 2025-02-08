@@ -1165,7 +1165,7 @@ MonoBehaviour:
   info: 
   speedModifier: 1
   jumpModifier: 1
-  healthModifier: 2
+  healthModifier: 4
   attackRadiusModifier: 2
 --- !u!114 &5402031575057910526
 MonoBehaviour:
