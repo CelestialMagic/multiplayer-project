@@ -11,10 +11,23 @@ public class BasicMenu : MonoBehaviour
     [SerializeField]
     private string howToPlay;//A string to be used for the how to play screen 
 
+    [SerializeField]
+    private GameObject settingsMenu;//The settings menu UI
+
 
 //Goes to the lobby scene 
     public void GoToLobby(){
         SceneManager.LoadScene(lobbyName);
+    }
+
+    public void ShowSettingsMenu(){
+        settingsMenu.SetActive(true);
+
+    }
+
+    public void HideSettingsMenu(){
+        settingsMenu.SetActive(false);
+
     }
 
 //Quits the Game
