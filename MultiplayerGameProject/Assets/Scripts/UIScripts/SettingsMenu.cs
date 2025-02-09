@@ -12,9 +12,13 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField]
     private TMP_Dropdown resolutionsDropdown;//A dropdown to store resolutions
 
+    [SerializeField]
+    private Toggle fullScreenToggle; 
+
     // Start is called before the first frame update
     void Start()
     {
+        fullScreenToggle.isOn = Screen.fullScreen;
         
         resolutions = Screen.resolutions;
         resolutionsDropdown.ClearOptions();
@@ -40,6 +44,10 @@ public class SettingsMenu : MonoBehaviour
     public void SetResolution(int resolutionIndex){
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void ToggleFullscreen(){
+        Screen.fullScreen = !Screen.fullScreen;
     }
 
     // Update is called once per frame
