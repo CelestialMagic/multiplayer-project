@@ -9,6 +9,9 @@ public class Shell : MonoBehaviour
     [SerializeField]
     private string name, info;//Basic Info to Display About Shell
 
+    [SerializeField]
+    private Sprite icon; 
+
 [Header("Shell-Specific Attributes")]
     [SerializeField]
     private float speedModifier, jumpModifier, healthModifier, attackRadiusModifier; 
@@ -19,6 +22,10 @@ public class Shell : MonoBehaviour
 
     public string GetInfo(){
         return info; 
+    }
+
+    public Sprite GetIcon(){
+        return icon; 
     }
 
      public float GetSpeedModifier(){

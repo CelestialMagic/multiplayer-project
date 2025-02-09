@@ -269,7 +269,7 @@ if (view.IsMine){
     
 
     rb.drag = groundDrag; 
-    playerUI.SetCurrentShellText(currentShell.GetComponent<Shell>().GetName());
+    playerUI.SetCurrentShellDisplay(currentShell.GetComponent<Shell>().GetName(), currentShell.GetComponent<Shell>().GetInfo(), currentShell.GetComponent<Shell>().GetIcon());
 
     //sphereCollider.radius *= currentShell.GetComponent<Shell>().GetAttackRadiusModifier();
     view.RPC("RPC_ShowDamageScale", RpcTarget.All, currentShell.GetComponent<Shell>().GetAttackRadiusModifier());

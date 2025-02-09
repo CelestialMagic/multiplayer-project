@@ -339,7 +339,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Basic Shell
-  info: 
+  info: A Starter Shell
+  icon: {fileID: 0}
+  speedModifier: 0
+  jumpModifier: 0
+  healthModifier: 0
+  attackRadiusModifier: 0
 --- !u!114 &7568999649270389137
 MonoBehaviour:
   m_ObjectHideFlags: 0

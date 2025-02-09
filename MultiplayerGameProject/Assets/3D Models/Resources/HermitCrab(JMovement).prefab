@@ -1163,6 +1163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Can
   info: 
+  icon: {fileID: 21300000, guid: e664deba79bbc4ee5bd94a1a7870f860, type: 3}
   speedModifier: 1
   jumpModifier: 1
   healthModifier: 4
@@ -1202,6 +1203,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3751583052324540482}
     m_Modifications:
+    - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 6c115758f10774b89ad74129cb429fbf, type: 3}
     - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
       propertyPath: jumpModifier
       value: 1
@@ -1336,6 +1341,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4781976201800179722, guid: 3fd911e00d1c74e80bbec715a16dd349, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f839a5ec20b04e62b4dbe5a3748e766, type: 3}
+    - target: {fileID: 4781976201800179722, guid: 3fd911e00d1c74e80bbec715a16dd349, type: 3}
       propertyPath: jumpModifier
       value: 1
       objectReference: {fileID: 0}
@@ -1450,6 +1459,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3751583052324540482}
     m_Modifications:
+    - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 490deb014d9ce4b3aad4ba2a2a90153d, type: 3}
     - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
       propertyPath: jumpModifier
       value: 1
@@ -2162,7 +2175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Basic Shell
-  info: 
+  info: No Special Abilities
+  icon: {fileID: 21300000, guid: 99eff25ff0e014da399b9b70415a89df, type: 3}
   speedModifier: 1
   jumpModifier: 1
   healthModifier: 1
@@ -2202,6 +2216,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3751583052324540482}
     m_Modifications:
+    - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: d4be1dd5bb65445d7bfd0ddc45aa1ad9, type: 3}
+    - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
+      propertyPath: info
+      value: 'Find Another Shell! '
+      objectReference: {fileID: 0}
     - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
       propertyPath: name
       value: No Shell Equipped
@@ -2323,6 +2345,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1461174338719829573, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 4419562ee8dd647cabefdffa31b214d3, type: 3}
     - target: {fileID: 1461174338719829573, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
       propertyPath: name
       value: Takeout Box

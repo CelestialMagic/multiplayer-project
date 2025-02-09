@@ -121,7 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Basic Shell
-  info: 
+  info: A Starter Shell
+  icon: {fileID: 0}
   speedModifier: 1
   jumpModifier: 1
   healthModifier: 1
