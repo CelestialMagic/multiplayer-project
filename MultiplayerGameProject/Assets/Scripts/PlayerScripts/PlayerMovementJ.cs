@@ -82,6 +82,9 @@ Player Fields
 
     public float attackCooldown = 0.5f; // Cooldown time between attacks
 
+    private const float timeToAttack = 0.25f; 
+    private float attackAgain; 
+
 
     private float lastAttackTime = 0f; // Tracks the time of the last attack
 
@@ -255,10 +258,16 @@ if (view.IsMine){
 
 private void Update(){
 if (view.IsMine){
-    if(meleeMovement.ReadValue<float>() != 0 && canAttack == true){
-        StartCoroutine(AttackPeriod());
+    if(meleeMovement.ReadValue<float>() != 0 && attackAgain <= 0){
+        //StartCoroutine(AttackPeriod());
+        view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, true);
+        attackAgain = timeToAttack;
         
-
+        
+    
+    }else{
+        attackAgain -= Time.deltaTime; 
+        view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
     }
         
     sideInput = GetSideInput();
@@ -446,6 +455,10 @@ private void OnCollisionExit(Collision collision){
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true; 
     }
+private void AttackTimer(){
+    view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, true);
+}
+
 IEnumerator Respawning(){
     //Resets hit ability to destroy shell
     timesHit = 0; 
