@@ -89,8 +89,6 @@ private Shell blankShell;
 
 private int timesHit = 0; 
 
-
-
     // Start is called before the first frame update
     void Start()
     {

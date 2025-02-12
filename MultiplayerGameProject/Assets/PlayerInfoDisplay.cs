@@ -13,7 +13,7 @@ public class PlayerInfoDisplay : MonoBehaviour
     private Image shellIcon; 
     
     public void SetCurrentShellDisplay(string shellName, string shellInfo, Sprite shellSprite){
-        shellText.text = $"Current Shell: {shellName}";
+        shellText.text = $"{shellName}";
         infoText.text = $"{shellInfo}";
         shellIcon.sprite = shellSprite; 
 
