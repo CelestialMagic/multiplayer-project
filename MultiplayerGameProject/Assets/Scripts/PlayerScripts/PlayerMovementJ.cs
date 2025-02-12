@@ -64,9 +64,9 @@ Player Fields
 
     private int currentShellIndex; 
 
-    private bool hasShell = true; 
-
     private bool vulnerable = false; 
+
+    private float meleeHoldTime = 0; 
 
 [SerializeField]
     private GameObject damageVolume;//A volume for damaging 
@@ -75,18 +75,9 @@ Player Fields
     private float invulnerabilityTime;
 
 
-
-
-    public float attackRange = 2f; // Range of the melee attack
-    public float attackAngle = 60f; // Angle of the attack cone
-
     public float attackCooldown = 0.5f; // Cooldown time between attacks
 
-    private const float timeToAttack = 0.25f; 
     private float attackAgain; 
-
-
-    private float lastAttackTime = 0f; // Tracks the time of the last attack
 
     private bool canAttack = true;
 
@@ -259,15 +250,18 @@ if (view.IsMine){
 private void Update(){
 if (view.IsMine){
     if(meleeMovement.ReadValue<float>() != 0 && attackAgain <= 0){
-        //StartCoroutine(AttackPeriod());
+        attackAgain = attackCooldown;
         view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, true);
-        attackAgain = timeToAttack;
+        StartCoroutine(AttackPeriod());
+
+        //view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, true);
+        
         
         
     
     }else{
         attackAgain -= Time.deltaTime; 
-        view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
+        //view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
     }
         
     sideInput = GetSideInput();
@@ -448,12 +442,8 @@ private void OnCollisionExit(Collision collision){
 
  IEnumerator AttackPeriod()
     {
-        canAttack = false; 
-        view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, true);
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(attackCooldown/2);
         view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
-        yield return new WaitForSeconds(attackCooldown);
-        canAttack = true; 
     }
 private void AttackTimer(){
     view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, true);
