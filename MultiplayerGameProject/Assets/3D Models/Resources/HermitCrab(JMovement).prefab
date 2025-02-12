@@ -736,7 +736,7 @@ MonoBehaviour:
   invulnerabilityTime: 2
   attackRange: 2
   attackAngle: 60
-  attackCooldown: 2
+  attackCooldown: 0.2
   playerUI: {fileID: 0}
   blankShell: {fileID: 1961918218828334928}
 --- !u!114 &6997365214926849018
