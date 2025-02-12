@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/City Beach.unity
     guid: 6bd0f82ad06229049acabe0ae2bbdffe
+  - enabled: 1
+    path: Assets/Scenes/City Beach Test.unity
+    guid: b9a08fa8dbe5fe5418c2ff4d0ef8039c
   m_configObjects: {}
