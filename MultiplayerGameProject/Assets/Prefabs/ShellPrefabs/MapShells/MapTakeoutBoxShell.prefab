@@ -563,7 +563,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Takeout Box
-  info: 
+  info: Fast, hot, n' ready!
+  icon: {fileID: 0}
+  speedModifier: 0
+  jumpModifier: 0
+  healthModifier: 0
+  attackRadiusModifier: 0
 --- !u!114 &2122472356999982685
 MonoBehaviour:
   m_ObjectHideFlags: 0

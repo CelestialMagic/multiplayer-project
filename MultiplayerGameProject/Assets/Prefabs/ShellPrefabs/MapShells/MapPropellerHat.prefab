@@ -594,7 +594,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Propeller Hat
-  info: 
+  info: The silliness within cannot be contained.
+  icon: {fileID: 0}
+  speedModifier: 0
+  jumpModifier: 0
+  healthModifier: 0
+  attackRadiusModifier: 0
 --- !u!114 &2529248647485127892
 MonoBehaviour:
   m_ObjectHideFlags: 0

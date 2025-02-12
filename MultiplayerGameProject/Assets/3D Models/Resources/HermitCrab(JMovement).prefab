@@ -1162,12 +1162,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Can
-  info: 
+  info: Increases durability
   icon: {fileID: 21300000, guid: e664deba79bbc4ee5bd94a1a7870f860, type: 3}
   speedModifier: 1
   jumpModifier: 1
-  healthModifier: 4
-  attackRadiusModifier: 2
+  healthModifier: 2
+  attackRadiusModifier: 1
 --- !u!114 &5402031575057910526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1208,16 +1208,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 6c115758f10774b89ad74129cb429fbf, type: 3}
     - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
+      propertyPath: info
+      value: Slightly increases durability and speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
       propertyPath: jumpModifier
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
       propertyPath: speedModifier
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
       propertyPath: healthModifier
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
       propertyPath: attackRadiusModifier
@@ -1345,6 +1349,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 7f839a5ec20b04e62b4dbe5a3748e766, type: 3}
     - target: {fileID: 4781976201800179722, guid: 3fd911e00d1c74e80bbec715a16dd349, type: 3}
+      propertyPath: info
+      value: Increases melee attack range
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781976201800179722, guid: 3fd911e00d1c74e80bbec715a16dd349, type: 3}
       propertyPath: jumpModifier
       value: 1
       objectReference: {fileID: 0}
@@ -1358,7 +1366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4781976201800179722, guid: 3fd911e00d1c74e80bbec715a16dd349, type: 3}
       propertyPath: attackRadiusModifier
-      value: 1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 9017199617438105044, guid: 3fd911e00d1c74e80bbec715a16dd349, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1464,8 +1472,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 490deb014d9ce4b3aad4ba2a2a90153d, type: 3}
     - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
+      propertyPath: info
+      value: Increases jump height
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
       propertyPath: jumpModifier
-      value: 1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 7708762765517714932, guid: 104548104d71f480c9d44ee03ff40b6e, type: 3}
       propertyPath: speedModifier
@@ -2350,6 +2362,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 4419562ee8dd647cabefdffa31b214d3, type: 3}
     - target: {fileID: 1461174338719829573, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
+      propertyPath: info
+      value: Increases movement speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461174338719829573, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
       propertyPath: name
       value: Takeout Box
       objectReference: {fileID: 0}
@@ -2359,7 +2375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1461174338719829573, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
       propertyPath: speedModifier
-      value: 1
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1461174338719829573, guid: df66f0ee1bc5a4f84a642fcee6f5e779, type: 3}
       propertyPath: healthModifier

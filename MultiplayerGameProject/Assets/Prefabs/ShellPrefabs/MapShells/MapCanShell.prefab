@@ -494,7 +494,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Can
-  info: 
+  info: Positively cantankerous
+  icon: {fileID: 0}
+  speedModifier: 0
+  jumpModifier: 0
+  healthModifier: 0
+  attackRadiusModifier: 0
 --- !u!65 &657130142597845090
 BoxCollider:
   m_ObjectHideFlags: 0

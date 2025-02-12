@@ -154,3 +154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: TakeoutBoxShell
+  info: Fast, hot, n' ready!
+  icon: {fileID: 0}
+  speedModifier: 0
+  jumpModifier: 0
+  healthModifier: 0
+  attackRadiusModifier: 0

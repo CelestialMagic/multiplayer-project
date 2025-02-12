@@ -517,7 +517,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Coconut
-  info: 
+  info: Wait, you're not a coconut crab!
+  icon: {fileID: 0}
+  speedModifier: 0
+  jumpModifier: 0
+  healthModifier: 0
+  attackRadiusModifier: 0
 --- !u!114 &8608456798017165671
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -421,7 +421,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Cone
-  info: 
+  info: Look both ways!
+  icon: {fileID: 0}
+  speedModifier: 0
+  jumpModifier: 0
+  healthModifier: 0
+  attackRadiusModifier: 0
 --- !u!65 &2071373445808984668
 BoxCollider:
   m_ObjectHideFlags: 0
