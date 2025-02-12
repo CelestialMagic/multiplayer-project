@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 22d980dce0a4949f0a4ea247c8437cc9, type: 2}
-  m_sharedMaterial: {fileID: 4971907917064939660, guid: 22d980dce0a4949f0a4ea247c8437cc9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e1ce7bf822b634db4a91372463ee2a0d, type: 2}
+  m_sharedMaterial: {fileID: 7720825665343849747, guid: e1ce7bf822b634db4a91372463ee2a0d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -201,8 +201,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 22d980dce0a4949f0a4ea247c8437cc9, type: 2}
-  m_sharedMaterial: {fileID: 4971907917064939660, guid: 22d980dce0a4949f0a4ea247c8437cc9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e1ce7bf822b634db4a91372463ee2a0d, type: 2}
+  m_sharedMaterial: {fileID: 7720825665343849747, guid: e1ce7bf822b634db4a91372463ee2a0d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Takeout Box
-  info: Fast, hot, n' ready!
+  info: Fast, hot, n' ready! (Increased Speed)
   icon: {fileID: 0}
   speedModifier: 0
   jumpModifier: 0
