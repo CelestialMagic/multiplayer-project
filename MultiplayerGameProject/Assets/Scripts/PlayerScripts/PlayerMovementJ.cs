@@ -159,6 +159,7 @@ private void RPC_DeactivateAllShells(){
 private void RPC_Respawn(){
     Debug.Log("Respawning");
     this.gameObject.SetActive(false);
+    
     currentShell = playerShells[0].gameObject;
     this.gameObject.transform.position = new Vector3(0, 10, 0);
 }
@@ -387,7 +388,8 @@ private void OnTriggerStay(Collider collision) {
         if(view){
             if(collision.gameObject != this.damageVolume){
                 if(vulnerable){
-                StartCoroutine(Respawning());
+                //StartCoroutine(Respawning());
+                Respawn();
                 }else{
                 if(timesHit >= currentShell.GetComponent<Shell>().GetHealthModifier()){
                     view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
@@ -460,6 +462,21 @@ IEnumerator Respawning(){
     
     
 
+}
+
+private void Respawn(){
+    //Resets hit ability to destroy shell
+    timesHit = 0; 
+    //StopCoroutine(AttackPeriod());
+
+    view.RPC("RPC_DeactivateAllShells", RpcTarget.All);
+    view.RPC("RPC_Respawn", RpcTarget.All);
+    view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
+    view.RPC("RPC_VisibleAgain", RpcTarget.All);
+    vulnerable = false;
+    canAttack = true; 
+    
+    
 }
 
 IEnumerator Invulnerability(){
