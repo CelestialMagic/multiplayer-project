@@ -447,7 +447,7 @@ private void OnCollisionExit(Collision collision){
 IEnumerator Respawning(){
     //Resets hit ability to destroy shell
     timesHit = 0; 
-    StopCoroutine(AttackPeriod());
+    //StopCoroutine(AttackPeriod());
 
     view.RPC("RPC_DeactivateAllShells", RpcTarget.All);
     view.RPC("RPC_Respawn", RpcTarget.All);
