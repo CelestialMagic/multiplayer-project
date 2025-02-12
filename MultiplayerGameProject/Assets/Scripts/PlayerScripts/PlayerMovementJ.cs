@@ -439,7 +439,7 @@ private void OnCollisionExit(Collision collision){
     {
         canAttack = false; 
         view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(attackCooldown);
         view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true; 
@@ -447,12 +447,14 @@ private void OnCollisionExit(Collision collision){
 IEnumerator Respawning(){
     //Resets hit ability to destroy shell
     timesHit = 0; 
+    StopCoroutine(AttackPeriod());
 
     view.RPC("RPC_DeactivateAllShells", RpcTarget.All);
     view.RPC("RPC_Respawn", RpcTarget.All);
-    //view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
+    view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
     view.RPC("RPC_VisibleAgain", RpcTarget.All);
-    vulnerable = false; 
+    vulnerable = false;
+    canAttack = true; 
     
     yield return new WaitForSeconds(0.1f);
     
