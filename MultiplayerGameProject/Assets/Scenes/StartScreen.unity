@@ -3437,7 +3437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5c0bab900604292845c2f5c086a5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lobbyName: City Beach Test
+  lobbyName: City Beach
   howToPlay: 
   settingsMenu: {fileID: 109650772}
 --- !u!4 &1412303989
