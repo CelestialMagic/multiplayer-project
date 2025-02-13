@@ -3275,7 +3275,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2.5
   m_Height: 10
   m_Direction: 1
   m_Center: {x: 0.2, y: -1, z: 0}
@@ -3291,7 +3291,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0, g: 1, b: 0.020439148, a: 1}
-  m_Intensity: 5
+  m_Intensity: 2
   m_Range: 75
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
