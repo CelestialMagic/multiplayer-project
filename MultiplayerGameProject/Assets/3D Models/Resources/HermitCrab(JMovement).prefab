@@ -884,6 +884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5589356512510469883}
   - component: {fileID: 2829932862784158046}
+  - component: {fileID: 4975060595868926211}
   m_Layer: 3
   m_Name: ThirdPersonCam
   m_TagString: Untagged
@@ -946,6 +947,23 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 5370625921414280468}
+--- !u!114 &4975060595868926211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7707006747289410556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729aad4491e915a41bda2b8325cf757a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FocusTracksTarget: 0
+  m_FocusTracking: 0
+  m_FocusTarget: {fileID: 8721177868243308498}
+  m_FocusOffset: 0
+  m_Profile: {fileID: 11400000, guid: 3f65d09d7da68c646b658520c06849a5, type: 2}
 --- !u!1 &8301184188585301129
 GameObject:
   m_ObjectHideFlags: 0
