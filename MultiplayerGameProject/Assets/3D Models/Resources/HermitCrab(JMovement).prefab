@@ -450,7 +450,6 @@ GameObject:
   - component: {fileID: 6997365214926849018}
   - component: {fileID: 6009295586482022632}
   - component: {fileID: 4099310812001230516}
-  - component: {fileID: 2878465174147488071}
   m_Layer: 3
   m_Name: HermitCrab(JMovement)
   m_TagString: Untagged
@@ -738,6 +737,10 @@ MonoBehaviour:
   attackCooldown: 1
   playerUI: {fileID: 0}
   blankShell: {fileID: 1961918218828334928}
+  objectPrefab: {fileID: 8218961533220827215, guid: 5b76bf5bdf446b541a1ae33f641eb52f, type: 3}
+  throwPoint: {fileID: 8721177868243308498}
+  throwForce: 20
+  upwardForce: 5
 --- !u!114 &6997365214926849018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,23 +798,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   attackCooldown: 0.5
---- !u!114 &2878465174147488071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6767957245811434281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21e07b0e53eb69b4687d373ea54710c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabName: 
-  objectPrefab: {fileID: 8218961533220827215, guid: 5b76bf5bdf446b541a1ae33f641eb52f, type: 3}
-  throwPoint: {fileID: 8721177868243308498}
-  throwForce: 20
-  upwardForce: 5
 --- !u!1 &6793128094291389621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,6 +2169,10 @@ MonoBehaviour:
   attackCooldown: 0.5
   playerUI: {fileID: 0}
   blankShell: {fileID: 1961918218828334928}
+  objectPrefab: {fileID: 0}
+  throwPoint: {fileID: 0}
+  throwForce: 10
+  upwardForce: 5
 --- !u!1 &5659922239014045668 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2476206356587550820, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
