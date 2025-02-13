@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class ThrowObject : MonoBehaviour
 {
+    [SerializeField]
+    private string prefabName; 
     public GameObject objectPrefab; // Assign your glowstick prefab in the Inspector
     public Transform throwPoint; // Assign a transform where the object will be spawned (e.g., player hand)
     public float throwForce = 10f; // Adjust for how far the object is thrown
@@ -23,7 +26,7 @@ public class ThrowObject : MonoBehaviour
         if (objectPrefab != null && throwPoint != null)
         {
             // Instantiate the object at the throw point's position and rotation
-            GameObject thrownObject = Instantiate(objectPrefab, throwPoint.position, throwPoint.rotation);
+            GameObject thrownObject = PhotonNetwork.Instantiate(objectPrefab.name, throwPoint.position, throwPoint.rotation);
 
             // Get the Rigidbody component to apply force
             Rigidbody rb = thrownObject.GetComponent<Rigidbody>();

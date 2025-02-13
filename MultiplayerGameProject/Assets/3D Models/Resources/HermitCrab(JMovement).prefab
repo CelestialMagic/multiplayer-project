@@ -807,6 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e07b0e53eb69b4687d373ea54710c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabName: 
   objectPrefab: {fileID: 8218961533220827215, guid: 5b76bf5bdf446b541a1ae33f641eb52f, type: 3}
   throwPoint: {fileID: 8721177868243308498}
   throwForce: 20
