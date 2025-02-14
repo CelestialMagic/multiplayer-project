@@ -12,6 +12,9 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     [SerializeField]
     private Vector3 location; 
 
+    [SerializeField]
+    private List<Vector3> spawnLocations; 
+
 
 
     // Start is called before the first frame update
@@ -30,7 +33,7 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
 
     }
     public override void OnJoinedRoom(){
-        PhotonNetwork.Instantiate(playerPrefab.name, location, Quaternion.identity);
+        PhotonNetwork.Instantiate(playerPrefab.name, GetRandomLocation(), Quaternion.identity);
     }
 
     public override void OnLeftRoom()
@@ -43,6 +46,11 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     {
         Debug.Log(PhotonNetwork.LeaveRoom());
         
+    }
+
+//Returns a random spot to respawn
+    public Vector3 GetRandomLocation(){
+        return spawnLocations[Random.Range(0, spawnLocations.Count)];
     }
 
     

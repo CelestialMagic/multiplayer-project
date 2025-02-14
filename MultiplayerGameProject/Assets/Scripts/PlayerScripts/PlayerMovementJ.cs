@@ -11,6 +11,9 @@ public class PlayerMovementJ : MonoBehaviour{
     /*
 Player Fields 
 */
+
+private SimpleLauncher gameLauncher;
+
     [SerializeField]
     private float moveSpeed, rotationSpeed, groundDrag, jumpForce;//floats representing speed to move by
 
@@ -62,31 +65,30 @@ Player Fields
     [SerializeField]
     private static List<GameObject> onlinePlayers = new List<GameObject>();//List of players currently online in lobby
 
-    private int currentShellIndex; 
+    private int currentShellIndex; //The current shell equipped 
 
-    private bool vulnerable = false; 
-
-    private float meleeHoldTime = 0; 
+    private bool vulnerable = false;//Checks if player can be destroyed
 
 [SerializeField]
     private GameObject damageVolume;//A volume for damaging 
 
     [SerializeField]
-    private float invulnerabilityTime;
+    private float invulnerabilityTime;//A period of time to be invincible after losing a shell
 
 
     public float attackCooldown = 0.5f; // Cooldown time between attacks
 
-    private float attackAgain; 
+    private float attackAgain; //A time period to attack again
 
-    private bool canAttack = true;
-
-[SerializeField]
-    private PlayerInfoDisplay playerUI;
+    private bool canAttack = true;//Checks if player can attack
 
 [SerializeField]
-private Shell blankShell; 
+    private PlayerInfoDisplay playerUI;//The player UI
 
+[SerializeField]
+private Shell blankShell; //A blank shell for when player loses their shell
+
+//Durability Logic
 private int timesHit = 0; 
 
 
@@ -103,6 +105,7 @@ private int timesHit = 0;
         //Locks cursor for rotating with mouse (commented out for now)
         //Cursor.lockState = CursorLockMode.Locked;
         playerUI = GameObject.FindObjectOfType<PlayerInfoDisplay>();
+        gameLauncher = GameObject.FindObjectOfType<SimpleLauncher>();
 
     if(!view.IsMine){
     followCam.enabled = false;
@@ -160,7 +163,7 @@ private void RPC_Respawn(){
     this.gameObject.SetActive(false);
     
     currentShell = playerShells[0].gameObject;
-    this.gameObject.transform.position = new Vector3(0, 10, 0);
+    this.gameObject.transform.position = gameLauncher.GetRandomLocation();
 }
 
 
