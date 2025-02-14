@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class PlayerInfoDisplay : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text shellText, infoText;
+    private TMP_Text shellText, infoText, scoreText;
 
     [SerializeField]
     private Image shellIcon; 
@@ -18,6 +18,12 @@ public class PlayerInfoDisplay : MonoBehaviour
 
     private bool isMenuActive = false;
     
+    public void SetScore(int value){
+        scoreText.text = $"{value}"; 
+
+    }
+
+
     public void SetCurrentShellDisplay(string shellName, string shellInfo, Sprite shellSprite){
         shellText.text = $"{shellName}";
         infoText.text = $"{shellInfo}";

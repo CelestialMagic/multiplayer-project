@@ -52,6 +52,7 @@ MonoBehaviour:
   - RPC_DeactivateAllShells
   - RPC_ShowDamageScale
   - RPC_DestroySelf
+  - RPC_IncreaseScore
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

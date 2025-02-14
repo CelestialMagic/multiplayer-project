@@ -98,6 +98,9 @@ private int timesHit = 0;
     public float throwForce = 10f; // Adjust for how far the object is thrown
     public float upwardForce = 5f; // Adjust for arc height
 
+[SerializeField]
+private int score; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -197,6 +200,12 @@ private void RPC_ShowDamageScale(float value){
     
 }
 
+[PunRPC]
+private void RPC_IncreaseScore(){
+    score++;
+    
+}
+
 
 
 //Resets the list of active players
@@ -257,6 +266,7 @@ if (view.IsMine){
 
 private void Update(){
 if (view.IsMine){
+    playerUI.SetScore(score);
     if(meleeMovement.ReadValue<float>() != 0 && attackAgain <= 0){
         attackAgain = attackCooldown;
         view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, true);
@@ -407,7 +417,13 @@ private void OnTriggerStay(Collider collision) {
             if(collision.gameObject != this.damageVolume){
                 if(vulnerable){
                 //StartCoroutine(Respawning());
+                
+                PhotonView photonView = collision.gameObject.GetComponentInParent<PhotonView>();
+                Debug.Log(photonView);
+                if(photonView)
+                    photonView.RPC("RPC_IncreaseScore", RpcTarget.All);
                 Respawn();
+                
                 }else{
                 if(timesHit >= currentShell.GetComponent<Shell>().GetHealthModifier()){
                     view.RPC("RPC_RemoveShell", RpcTarget.All, currentShellIndex);
@@ -525,6 +541,12 @@ IEnumerator Invulnerability(){
             }
         }
     }
+
+    public int GetScore(){
+        return score; 
+
+    }
+
 
 
 

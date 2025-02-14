@@ -741,6 +741,7 @@ MonoBehaviour:
   throwPoint: {fileID: 8721177868243308498}
   throwForce: 20
   upwardForce: 5
+  score: 0
 --- !u!114 &6997365214926849018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2191,6 +2192,7 @@ MonoBehaviour:
   throwPoint: {fileID: 0}
   throwForce: 10
   upwardForce: 5
+  score: 0
 --- !u!1 &5659922239014045668 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2476206356587550820, guid: ca3336fe999ff4413a270b146cb24ed6, type: 3}
