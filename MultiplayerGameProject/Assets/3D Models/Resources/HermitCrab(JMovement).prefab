@@ -1185,6 +1185,7 @@ MonoBehaviour:
   name: Can
   info: Increased Durability
   icon: {fileID: 21300000, guid: e664deba79bbc4ee5bd94a1a7870f860, type: 3}
+  shellSpawner: {fileID: 0}
   speedModifier: 1
   jumpModifier: 1
   healthModifier: 2
@@ -2213,6 +2214,7 @@ MonoBehaviour:
   name: Basic Shell
   info: No Special Abilities
   icon: {fileID: 21300000, guid: 99eff25ff0e014da399b9b70415a89df, type: 3}
+  shellSpawner: {fileID: 0}
   speedModifier: 1
   jumpModifier: 1
   healthModifier: 1

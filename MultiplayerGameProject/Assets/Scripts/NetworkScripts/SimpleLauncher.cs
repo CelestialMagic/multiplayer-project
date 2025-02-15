@@ -15,6 +15,9 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     [SerializeField]
     private List<Vector3> spawnLocations; 
 
+    [SerializeField]
+    private List<ShellSpawner> shellSpawners; 
+
 
 
     // Start is called before the first frame update
@@ -34,6 +37,14 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom(){
         PhotonNetwork.Instantiate(playerPrefab.name, GetRandomLocation(), Quaternion.identity);
+        if(PhotonNetwork.IsMasterClient){
+            foreach(ShellSpawner s in shellSpawners){
+            if(s.HasSpawnedShell() == false)
+                s.SpawnFirstShell();
+        }
+
+        }
+        
     }
 
     public override void OnLeftRoom()

@@ -12,6 +12,9 @@ public class Shell : MonoBehaviour
     [SerializeField]
     private Sprite icon; 
 
+       [SerializeField]
+    private ShellSpawner shellSpawner; 
+
 [Header("Shell-Specific Attributes")]
     [SerializeField]
     private float speedModifier, jumpModifier, healthModifier, attackRadiusModifier; 
@@ -48,12 +51,18 @@ public class Shell : MonoBehaviour
 
 
 
+ 
+
+    public void SetShellSpawner(ShellSpawner s){
+        shellSpawner = s; 
+    }
 
 
 
 
     [PunRPC]
     private void DestroyShell(){
+        shellSpawner.SpawnShell(); 
         PhotonNetwork.Destroy(this.gameObject);
         Destroy(this.gameObject);
     }

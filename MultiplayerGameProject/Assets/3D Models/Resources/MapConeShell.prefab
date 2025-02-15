@@ -423,6 +423,7 @@ MonoBehaviour:
   name: Cone
   info: Look both ways! (Increased Attack Range)
   icon: {fileID: 0}
+  shellSpawner: {fileID: 0}
   speedModifier: 0
   jumpModifier: 0
   healthModifier: 0

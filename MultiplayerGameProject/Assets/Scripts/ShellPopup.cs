@@ -15,8 +15,6 @@ public class ShellPopup : MonoBehaviour
     private Shell shellToDisplay;
 
 
-
-
     // Start is called before the first frame update
     void Start()
     {
