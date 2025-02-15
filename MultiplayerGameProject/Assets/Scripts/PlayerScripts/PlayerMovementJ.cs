@@ -404,7 +404,7 @@ private void OnTriggerStay(Collider collision) {
 
             PhotonView photonView = collision.gameObject.GetComponent<PhotonView>();
             if(photonView)
-                photonView.RPC("DestroyShell", RpcTarget.All);
+                photonView.RPC("ShowAndHideShell", RpcTarget.All);
             //shellUI.SetActive(false);
 
 

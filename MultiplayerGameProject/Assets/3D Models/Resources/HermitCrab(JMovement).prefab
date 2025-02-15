@@ -1189,6 +1189,7 @@ MonoBehaviour:
   jumpModifier: 1
   healthModifier: 2
   attackRadiusModifier: 1
+  view: {fileID: 0}
 --- !u!114 &5402031575057910526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2217,6 +2218,7 @@ MonoBehaviour:
   jumpModifier: 1
   healthModifier: 1
   attackRadiusModifier: 1
+  view: {fileID: 0}
 --- !u!114 &6184614120001812085
 MonoBehaviour:
   m_ObjectHideFlags: 0

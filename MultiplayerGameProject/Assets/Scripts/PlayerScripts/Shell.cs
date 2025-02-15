@@ -16,6 +16,9 @@ public class Shell : MonoBehaviour
     [SerializeField]
     private float speedModifier, jumpModifier, healthModifier, attackRadiusModifier; 
 
+    [SerializeField]
+    private PhotonView view;
+
     public string GetName(){
         return name; 
     }
@@ -57,6 +60,24 @@ public class Shell : MonoBehaviour
         PhotonNetwork.Destroy(this.gameObject);
         Destroy(this.gameObject);
     }
+
+    [PunRPC]
+    public void ShowAndHideShell(){
+        view.RPC("RPC_HideShell", RpcTarget.All);
+        view.RPC("RPC_ShowShell", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void RPC_HideShell(){
+        gameObject.SetActive(false);
+        
+    }
+
+    [PunRPC]
+    public void RPC_ShowShell(){
+        gameObject.SetActive(true);
+    }
+
 
     
 
