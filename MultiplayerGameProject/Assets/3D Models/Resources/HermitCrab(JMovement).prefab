@@ -643,7 +643,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: b802fcf9-fd61-4e3a-94a8-0949ecc86aa5
-      m_Path: <Keyboard>/enter
+      m_Path: <Keyboard>/q
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -706,6 +706,23 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Select Movement
+      m_Flags: 0
+    m_Flags: 0
+  glowstickMovement:
+    m_Name: Glowstick Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: dff7db53-c340-432e-9d2a-523058552fae
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 68b07c52-3b38-4c55-b8ac-8dc3da289ccb
+      m_Path: <Keyboard>/z
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Glowstick Movement
       m_Flags: 0
     m_Flags: 0
   followCam: {fileID: 2829932862784158046}
@@ -2167,6 +2184,15 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Select Movement
       m_Flags: 0
+    m_Flags: 0
+  glowstickMovement:
+    m_Name: Glowstick Movement
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d7219c2a-6552-4715-b7ef-4385895b6337
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
     m_Flags: 0
   followCam: {fileID: 2829932862784158046}
   viewSpeed: 0.5

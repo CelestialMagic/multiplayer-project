@@ -25,7 +25,7 @@ private SimpleLauncher gameLauncher;
     private float sideInput, forwardInput;//Not currently used 
 
     [SerializeField]
-    private InputAction forwardMovement, sideMovement, meleeMovement, jumpMovement, selectMovement;//InputActions to be mapped to player actions
+    private InputAction forwardMovement, sideMovement, meleeMovement, jumpMovement, selectMovement, glowstickMovement;//InputActions to be mapped to player actions
 
     [SerializeField]
     private CinemachineVirtualCamera followCam;//The camera assigned to the player
@@ -239,6 +239,7 @@ private void OnDestroy(){
         meleeMovement.Enable();
         jumpMovement.Enable();
         selectMovement.Enable();
+        glowstickMovement.Enable();
     }
 
 //Disables Input Actions
@@ -248,6 +249,7 @@ private void OnDestroy(){
         meleeMovement.Disable();
         jumpMovement.Disable();
         selectMovement.Disable();
+        glowstickMovement.Disable();
     }
 
 void FixedUpdate(){
@@ -282,8 +284,9 @@ if (view.IsMine){
         //view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
     }
 
+//Input.GetKeyDown(KeyCode.E)
 
-    if (Input.GetKeyDown(KeyCode.E))
+    if (Input.GetKeyDown(KeyCode.Z))
         {
             Throw();
             Debug.Log("Call Throw");
