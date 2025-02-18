@@ -274,7 +274,7 @@ if (view.IsMine){
 
 private void Update(){
 if (view.IsMine){
-    if(gameLauncher.gameHasStarted == false){
+    if(gameLauncher.gameHasStarted == false || gameLauncher.gameHasEnded == true){
         OnDisable();
 
     }else{
@@ -562,7 +562,6 @@ IEnumerator Invulnerability(){
 
     public int GetScore(){
         return score; 
-
     }
 
 

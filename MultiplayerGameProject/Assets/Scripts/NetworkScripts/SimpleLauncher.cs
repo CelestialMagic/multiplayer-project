@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
+using System.Linq;
 
 public class SimpleLauncher : MonoBehaviourPunCallbacks
 {
@@ -21,7 +22,7 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     private List<Vector3> spawnLocations; 
 
     [SerializeField]
-    private TMP_Text countdownTimer;//Text representing a countdown
+    private TMP_Text countdownTimer, leaderboardText;//Text representing a countdown
 
     [SerializeField]
     private int roundLength; 
@@ -29,9 +30,11 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     private int currentRoundTime; 
 
     [SerializeField]
-    private GameObject waitingUI; 
+    private GameObject waitingUI, endUI; 
 
     public bool gameHasStarted = false; 
+
+    public bool gameHasEnded = false;
     public bool timerStarted = false; 
 
     private Coroutine timerCoroutine;
@@ -77,9 +80,13 @@ private IEnumerator Timer(){
     //RefreshTimerUI();
     if(currentRoundTime <= 0){
         timerCoroutine = null;
+        gameHasEnded = true;
+        endUI.SetActive(true);
+        DetermineFinalScores();
         //RefreshTimerUI();
     }else{
         timerCoroutine = StartCoroutine(Timer());
+        
         //RefreshTimerUI();
     }
 }
@@ -111,7 +118,7 @@ private IEnumerator DelayStartGame(){
             timerStarted = true; 
         }else{
         }
-        if(PhotonNetwork.PlayerList.Length >= 5 && gameHasStarted != true){
+        if(PhotonNetwork.PlayerList.Length >= 2 && gameHasStarted != true){
             Debug.Log("The Game Can Start!");
             StartCoroutine(DelayStartGame());
             gameHasStarted = true;
@@ -157,6 +164,28 @@ private IEnumerator DelayStartGame(){
 //Returns a random spot to respawn
     public Vector3 GetRandomLocation(){
         return spawnLocations[Random.Range(0, spawnLocations.Count)];
+    }
+
+    private void DetermineFinalScores(){
+        List<int> scores = new List<int>();
+        List <PlayerMovementJ> players = FindObjectsOfType<PlayerMovementJ>().ToList();
+        string leaderboard = "";
+
+        foreach(PlayerMovementJ player in players){
+            scores.Add(player.GetScore());
+        }
+        scores.Sort();
+        scores.Reverse(); 
+
+        foreach(int s in scores){
+            leaderboard += $"{s} \n";
+            
+        }
+        leaderboardText.text = leaderboard;
+
+        
+
+
     }
 
 
