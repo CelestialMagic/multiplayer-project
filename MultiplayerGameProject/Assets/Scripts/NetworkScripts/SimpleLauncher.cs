@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class SimpleLauncher : MonoBehaviourPunCallbacks
 {
+    [SerializeField]
+    private int maxPlayers;
+
     [SerializeField]
     private GameObject playerPrefab, gameUI;
 
@@ -29,12 +33,22 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     }
 
     public override void OnConnectedToMaster(){
-        PhotonNetwork.JoinRandomOrCreateRoom();
+        PhotonNetwork.JoinRandomRoom();
+        //PhotonNetwork.JoinRandomOrCreateRoom();
 
     }
     public override void OnJoinedRoom(){
         PhotonNetwork.Instantiate(playerPrefab.name, GetRandomLocation(), Quaternion.identity);
     }
+
+    private void CreateRoom()
+    {
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = maxPlayers;
+        PhotonNetwork.CreateRoom(null, roomOptions, null);
+    }
+
+    
 
     public override void OnLeftRoom()
     {
@@ -46,6 +60,11 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     {
         Debug.Log(PhotonNetwork.LeaveRoom());
         
+    }
+
+    public override void OnJoinRandomFailed(short returnCode, string message)
+    {
+        CreateRoom();
     }
 
 //Returns a random spot to respawn
