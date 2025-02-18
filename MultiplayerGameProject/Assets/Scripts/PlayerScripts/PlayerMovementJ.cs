@@ -279,6 +279,8 @@ if (view.IsMine){
 
     }else{
         OnEnable();
+        //gameLauncher.RefreshTimerUI();
+        
 
     }
     playerUI.SetScore(score);

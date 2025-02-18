@@ -24,9 +24,71 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     private TMP_Text countdownTimer;//Text representing a countdown
 
     [SerializeField]
+    private int roundLength; 
+
+    private int currentRoundTime; 
+
+    [SerializeField]
     private GameObject waitingUI; 
 
     public bool gameHasStarted = false; 
+    public bool timerStarted = false; 
+
+    private Coroutine timerCoroutine;
+
+[SerializeField]    private PhotonView view; 
+
+
+
+    
+
+
+public void RefreshTimerUI(){
+    Debug.Log("RefreshedUI");
+    string minutes = (currentRoundTime/60).ToString("00");
+    string seconds = (currentRoundTime % 60).ToString("00");
+    countdownTimer.text = $"{minutes}:{seconds}";
+}
+
+private void StartTimer(){
+    
+    Debug.Log("Timer Started!");
+    currentRoundTime = roundLength;
+    RefreshTimerUI();
+
+    timerCoroutine = StartCoroutine(Timer());
+}
+
+
+[PunRPC]
+public void RPC_Countdown(){
+    //RefreshTimerUI();
+    string minutes = (currentRoundTime/60).ToString("00");
+    string seconds = (currentRoundTime % 60).ToString("00");
+    countdownTimer.text = $"{minutes}:{seconds}";
+
+}
+
+private IEnumerator Timer(){
+    yield return new WaitForSeconds(1f);
+    currentRoundTime -= 1; 
+    view.RPC("RPC_Countdown", RpcTarget.All);
+   
+    //RefreshTimerUI();
+    if(currentRoundTime <= 0){
+        timerCoroutine = null;
+        //RefreshTimerUI();
+    }else{
+        timerCoroutine = StartCoroutine(Timer());
+        //RefreshTimerUI();
+    }
+}
+
+private IEnumerator DelayStartGame(){
+    yield return new WaitForSeconds(5f);
+}
+
+
 
 
 
@@ -43,15 +105,17 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     }
 
     void Update(){
-        if(gameHasStarted == true){
+        if(gameHasStarted == true && timerStarted != true){
             waitingUI.SetActive(false);
+            StartTimer();
+            timerStarted = true; 
         }else{
-            
         }
-
-        if(PhotonNetwork.PlayerList.Length >= 3){
+        if(PhotonNetwork.PlayerList.Length >= 5 && gameHasStarted != true){
             Debug.Log("The Game Can Start!");
+            StartCoroutine(DelayStartGame());
             gameHasStarted = true;
+            PhotonNetwork.CurrentRoom.IsVisible = false; 
         }
     }
 
@@ -94,6 +158,7 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     public Vector3 GetRandomLocation(){
         return spawnLocations[Random.Range(0, spawnLocations.Count)];
     }
+
 
     
 }
