@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 
 public class SimpleLauncher : MonoBehaviourPunCallbacks
 {
@@ -19,17 +20,39 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     [SerializeField]
     private List<Vector3> spawnLocations; 
 
+    [SerializeField]
+    private TMP_Text countdownTimer;//Text representing a countdown
+
+    [SerializeField]
+    private GameObject waitingUI; 
+
+    public bool gameHasStarted = false; 
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        waitingUI.SetActive(true);
         if (PhotonNetwork.IsConnected){
             OnConnectedToMaster();
 
         }else
             PhotonNetwork.ConnectUsingSettings();
         
+    }
+
+    void Update(){
+        if(gameHasStarted == true){
+            waitingUI.SetActive(false);
+        }else{
+            
+        }
+
+        if(PhotonNetwork.PlayerList.Length >= 3){
+            Debug.Log("The Game Can Start!");
+            gameHasStarted = true;
+        }
     }
 
     public override void OnConnectedToMaster(){

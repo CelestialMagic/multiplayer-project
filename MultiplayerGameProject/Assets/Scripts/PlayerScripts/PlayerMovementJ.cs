@@ -92,6 +92,7 @@ private Shell blankShell; //A blank shell for when player loses their shell
 private int timesHit = 0; 
 
 
+
 //Throw Glowstick Logic
     public GameObject objectPrefab; // Assign your glowstick prefab in the Inspector
     public Transform throwPoint; // Assign a transform where the object will be spawned (e.g., player hand)
@@ -107,16 +108,21 @@ private int score;
         
         //Locks cursor for rotating with mouse (commented out for now)
         //Cursor.lockState = CursorLockMode.Locked;
+
         playerUI = GameObject.FindObjectOfType<PlayerInfoDisplay>();
         gameLauncher = GameObject.FindObjectOfType<SimpleLauncher>();
+        
 
     if(!view.IsMine){
     followCam.enabled = false;
     }
         Color color = colorPalettes[(int)Random.Range(0, colorPalettes.Count - 1)];//Picks a random color 
         //RPC call
-        if (view)
+        if (view){
             this.view.RPC("RPC_SendColor", RpcTarget.All, new Vector3(color.r, color.g, color.b));
+
+        }
+            
         
     }
 
@@ -268,6 +274,13 @@ if (view.IsMine){
 
 private void Update(){
 if (view.IsMine){
+    if(gameLauncher.gameHasStarted == false){
+        OnDisable();
+
+    }else{
+        OnEnable();
+
+    }
     playerUI.SetScore(score);
     if(meleeMovement.ReadValue<float>() != 0 && attackAgain <= 0){
         attackAgain = attackCooldown;
