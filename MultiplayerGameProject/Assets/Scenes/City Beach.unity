@@ -5761,7 +5761,8 @@ MonoBehaviour:
   gameHasEnded: 0
   timerStarted: 0
   view: {fileID: 551667544}
-  startGamePlayers: 4
+  startGamePlayers: 2
+  scores: 
 --- !u!114 &551667544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10811,6 +10812,7 @@ MonoBehaviour:
   shellText: {fileID: 803741387}
   infoText: {fileID: 633664005}
   scoreText: {fileID: 1118874009}
+  rankText: {fileID: 0}
   shellIcon: {fileID: 1016051513}
   descriptionMenu: {fileID: 1210704741}
 --- !u!114 &1016051516
@@ -18746,7 +18748,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 977d8b0dffb1de448a7358916d7e9117, type: 2}
+  - {fileID: 2100000, guid: 62ede01f899dc4ca48749259fbae6afe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

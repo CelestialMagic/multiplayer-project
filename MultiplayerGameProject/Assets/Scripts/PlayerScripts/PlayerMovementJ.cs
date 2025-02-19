@@ -85,6 +85,8 @@ private SimpleLauncher gameLauncher;
 [SerializeField]
     private PlayerInfoDisplay playerUI;//The player UI
 
+
+
 [SerializeField]
 private Shell blankShell; //A blank shell for when player loses their shell
 
@@ -276,6 +278,38 @@ private void Update(){
 if (view.IsMine){
     if(gameLauncher.gameHasEnded == true){
         OnDisable();
+        List<int> playerScores = gameLauncher.GetScores();
+
+        for(int i = 0; i < playerScores.Count; i++){
+            if(score == playerScores[i]){
+                switch(i){
+                case 0:
+                playerUI.rankText.text = "1st";
+                break;
+
+                case 1:
+                playerUI.rankText.text = "2nd";
+                break;
+
+                case 2:
+                playerUI.rankText.text = "3rd";
+                break;
+
+
+                default:
+                playerUI.rankText.text = $"{i}th";
+                break;
+            }
+            break;
+
+            }
+
+            
+
+        }
+
+
+         
 
     }else{
         OnEnable();

@@ -33,7 +33,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: water material
+  m_Name: Night Water
   m_Shader: {fileID: -6465566751694194690, guid: 30e506ea4ecea8d44949f339df69e62b, type: 3}
   m_Parent: {fileID: 2100000, guid: 851f171d374a2d44d9583425eb38f6a7, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -62,20 +62,20 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _body_transparency: 0
     - _caustic_offset_speed: 3
-    - _caustic_power: 7
-    - _caustic_scale: 12
-    - _caustic_strength: 1.5
+    - _caustic_power: 7.2
+    - _caustic_scale: 10.2
+    - _caustic_strength: 0.5
     - _distortion_offset_speed_1: 10
     - _distortion_scale_1: 50
     - _distortion_strength_1: 0.05
     - _line_length: 1
-    - _wave_count: 0.75
+    - _wave_count: 4.8
     - _wave_flow_direction: 1
-    - _wave_size: 0.16
-    - _wave_speed: 4
+    - _wave_size: 0.159
+    - _wave_speed: 3.1
     m_Colors:
-    - _body_color: {r: 0.48584908, g: 0.8618628, b: 1, a: 0}
-    - _caustic_color: {r: 0.3160377, g: 0.9248394, b: 1, a: 0}
+    - _body_color: {r: 0.05242079, g: 0.06544511, b: 0.3584906, a: 0}
+    - _caustic_color: {r: 0.0012014981, g: 0.06876833, b: 0.254717, a: 0}
     - _distortion_direction: {r: 0.05, g: 0, b: 0, a: 0}
-    - _line_color: {r: 0.5584628, g: 0.88448167, b: 0.9496855, a: 0}
+    - _line_color: {r: 0.2140493, g: 0.20131719, b: 0.49056602, a: 0}
   m_BuildTextureStacks: []

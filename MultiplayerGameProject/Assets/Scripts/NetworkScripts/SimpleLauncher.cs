@@ -44,6 +44,14 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
 
 
 [SerializeField] private int startGamePlayers;
+
+[SerializeField]
+private List<int> scores;
+
+public List<int> GetScores(){
+    return scores; 
+}
+
     
 
 
@@ -168,7 +176,6 @@ private IEnumerator DelayStartGame(){
     }
 
     private void DetermineFinalScores(){
-        List<int> scores = new List<int>();
         List <PlayerMovementJ> players = FindObjectsOfType<PlayerMovementJ>().ToList();
         string leaderboard = "";
         int place = 1; 
