@@ -274,7 +274,7 @@ if (view.IsMine){
 
 private void Update(){
 if (view.IsMine){
-    if(gameLauncher.gameHasStarted == false || gameLauncher.gameHasEnded == true){
+    if(gameLauncher.gameHasEnded == true){
         OnDisable();
 
     }else{
@@ -432,7 +432,7 @@ private void OnTriggerStay(Collider collision) {
 
     }else if (collision.gameObject.tag == "Claws"){
         if(view){
-            if(collision.gameObject != this.damageVolume){
+            if(collision.gameObject != this.damageVolume && gameLauncher.gameHasStarted == true){
                 if(vulnerable){
                 //StartCoroutine(Respawning());
                 
