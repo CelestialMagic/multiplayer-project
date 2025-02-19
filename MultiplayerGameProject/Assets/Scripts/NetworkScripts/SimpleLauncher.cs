@@ -50,7 +50,7 @@ public void RefreshTimerUI(){
     Debug.Log("RefreshedUI");
     string minutes = (currentRoundTime/60).ToString("00");
     string seconds = (currentRoundTime % 60).ToString("00");
-    countdownTimer.text = $"{minutes}:{seconds}";
+    countdownTimer.text = $"Timer: {minutes}:{seconds}";
 }
 
 private void StartTimer(){
@@ -68,7 +68,7 @@ public void RPC_Countdown(){
     //RefreshTimerUI();
     string minutes = (currentRoundTime/60).ToString("00");
     string seconds = (currentRoundTime % 60).ToString("00");
-    countdownTimer.text = $"{minutes}:{seconds}";
+    countdownTimer.text = $"Timer: {minutes}:{seconds}";
 
 }
 
