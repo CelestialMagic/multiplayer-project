@@ -10812,7 +10812,7 @@ MonoBehaviour:
   shellText: {fileID: 803741387}
   infoText: {fileID: 633664005}
   scoreText: {fileID: 1118874009}
-  rankText: {fileID: 0}
+  rankText: {fileID: 1720692899}
   shellIcon: {fileID: 1016051513}
   descriptionMenu: {fileID: 1210704741}
 --- !u!114 &1016051516
