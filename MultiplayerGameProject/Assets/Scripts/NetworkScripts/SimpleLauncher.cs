@@ -170,6 +170,7 @@ private IEnumerator DelayStartGame(){
         List<int> scores = new List<int>();
         List <PlayerMovementJ> players = FindObjectsOfType<PlayerMovementJ>().ToList();
         string leaderboard = "";
+        int place = 1; 
 
         foreach(PlayerMovementJ player in players){
             scores.Add(player.GetScore());
@@ -178,7 +179,27 @@ private IEnumerator DelayStartGame(){
         scores.Reverse(); 
 
         foreach(int s in scores){
-            leaderboard += $"{s} \n";
+            switch(place){
+                case 1:
+                leaderboard += "1st";
+                break;
+
+                case 2:
+                leaderboard += "2nd";
+                break;
+
+                case 3:
+                leaderboard += "3rd";
+                break;
+
+
+                default:
+                leaderboard += $"{place}th";
+                break;
+            }
+            leaderboard += $" {s} \n";
+            place++;
+
             
         }
         leaderboardText.text = leaderboard;
