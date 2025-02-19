@@ -39,10 +39,11 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
 
     private Coroutine timerCoroutine;
 
+
 [SerializeField]    private PhotonView view; 
 
 
-
+[SerializeField] private int startGamePlayers;
     
 
 
@@ -118,7 +119,7 @@ private IEnumerator DelayStartGame(){
             timerStarted = true; 
         }else{
         }
-        if(PhotonNetwork.PlayerList.Length >= 2 && gameHasStarted != true){
+        if(PhotonNetwork.PlayerList.Length >= startGamePlayers && gameHasStarted != true){
             Debug.Log("The Game Can Start!");
             StartCoroutine(DelayStartGame());
             gameHasStarted = true;
