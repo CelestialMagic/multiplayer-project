@@ -5761,6 +5761,7 @@ MonoBehaviour:
   gameHasEnded: 0
   timerStarted: 0
   view: {fileID: 551667544}
+  startGamePlayers: 4
 --- !u!114 &551667544
 MonoBehaviour:
   m_ObjectHideFlags: 0
