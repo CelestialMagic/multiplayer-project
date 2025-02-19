@@ -62,8 +62,8 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _body_transparency: 0
     - _caustic_offset_speed: 3
-    - _caustic_power: 7.2
-    - _caustic_scale: 10.2
+    - _caustic_power: 7.7
+    - _caustic_scale: 50
     - _caustic_strength: 0.5
     - _distortion_offset_speed_1: 10
     - _distortion_scale_1: 50
