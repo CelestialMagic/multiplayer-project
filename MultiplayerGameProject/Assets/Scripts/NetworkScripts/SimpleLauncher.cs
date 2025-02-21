@@ -22,10 +22,10 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     private List<Vector3> spawnLocations; 
 
     [SerializeField]
-    private TMP_Text countdownTimer, leaderboardText;//Text representing a countdown
+    private TMP_Text countdownTimer, leaderboardText, roomJoinTimerText;//Text representing a countdown
 
     [SerializeField]
-    private int roundLength; 
+    private int roundLength, roomJoinTime; 
 
     private int currentRoundTime; 
 
@@ -37,10 +37,12 @@ public class SimpleLauncher : MonoBehaviourPunCallbacks
     public bool gameHasEnded = false;
     public bool timerStarted = false; 
 
-    private Coroutine timerCoroutine;
+    public bool joinCountdownStarted = false; 
+
+    private Coroutine timerCoroutine, roomJoinCoroutine;
 
 
-[SerializeField]    private PhotonView view; 
+[SerializeField] private PhotonView view; 
 
 
 [SerializeField] private int startGamePlayers;
@@ -71,13 +73,21 @@ private void StartTimer(){
     timerCoroutine = StartCoroutine(Timer());
 }
 
-
 [PunRPC]
 public void RPC_Countdown(){
     //RefreshTimerUI();
     string minutes = (currentRoundTime/60).ToString("00");
     string seconds = (currentRoundTime % 60).ToString("00");
     countdownTimer.text = $"Timer: {minutes}:{seconds}";
+
+}
+
+[PunRPC]
+public void RPC_JoinRoomCountdown(){
+    //RefreshTimerUI();
+    string minutes = (0).ToString("00");
+    string seconds = (roomJoinTime).ToString("00");
+    roomJoinTimerText.text = $"Match Starting In: {minutes}:{seconds}";
 
 }
 
@@ -100,8 +110,19 @@ private IEnumerator Timer(){
     }
 }
 
+
 private IEnumerator DelayStartGame(){
-    yield return new WaitForSeconds(5f);
+    yield return new WaitForSeconds(1f);
+    roomJoinTime -= 1; 
+    view.RPC("RPC_JoinRoomCountdown", RpcTarget.All);
+
+    if(roomJoinTime <= 0){
+        roomJoinCoroutine = null;
+        gameHasStarted = true;
+    }else{
+        roomJoinCoroutine = StartCoroutine(DelayStartGame());
+        
+    }
 }
 
 
@@ -111,7 +132,8 @@ private IEnumerator DelayStartGame(){
     // Start is called before the first frame update
     void Start()
     {
-        waitingUI.SetActive(true);
+        if(gameHasStarted == false)
+            waitingUI.SetActive(true);
         if (PhotonNetwork.IsConnected){
             OnConnectedToMaster();
 
@@ -121,17 +143,18 @@ private IEnumerator DelayStartGame(){
     }
 
     void Update(){
+        //Used to start the game
         if(gameHasStarted == true && timerStarted != true){
             waitingUI.SetActive(false);
             StartTimer();
             timerStarted = true; 
         }else{
-        }
-        if(PhotonNetwork.PlayerList.Length >= startGamePlayers && gameHasStarted != true){
-            Debug.Log("The Game Can Start!");
-            StartCoroutine(DelayStartGame());
-            gameHasStarted = true;
+        if(PhotonNetwork.PlayerList.Length >= startGamePlayers && gameHasStarted != true && joinCountdownStarted == false){
             PhotonNetwork.CurrentRoom.IsVisible = false; 
+            joinCountdownStarted = true; 
+            StartCoroutine(DelayStartGame());
+            
+        }
         }
     }
 
@@ -142,6 +165,7 @@ private IEnumerator DelayStartGame(){
     }
     public override void OnJoinedRoom(){
         PhotonNetwork.Instantiate(playerPrefab.name, GetRandomLocation(), Quaternion.identity);
+        view.RPC("RPC_JoinRoomCountdown", RpcTarget.All);
     }
 
     private void CreateRoom()

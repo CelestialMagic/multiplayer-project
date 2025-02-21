@@ -5772,12 +5772,15 @@ MonoBehaviour:
   - {x: 81.2, y: 9, z: -72.7}
   countdownTimer: {fileID: 1053954819}
   leaderboardText: {fileID: 1320041487}
-  roundLength: 60
+  roomJoinTimerText: {fileID: 91979904}
+  roundLength: 90
+  roomJoinTime: 10
   waitingUI: {fileID: 347774244}
   endUI: {fileID: 221470203}
   gameHasStarted: 0
   gameHasEnded: 0
   timerStarted: 0
+  joinCountdownStarted: 0
   view: {fileID: 551667544}
   startGamePlayers: 2
   scores: 

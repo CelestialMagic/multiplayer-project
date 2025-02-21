@@ -57,6 +57,7 @@ MonoBehaviour:
   - RPC_HideShell
   - RPC_ShowShell
   - RPC_Countdown
+  - RPC_JoinRoomCountdown
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
