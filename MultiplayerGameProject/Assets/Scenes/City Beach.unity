@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 6632402444877278580, guid: 6f54fe5afd8a14c2cbcefdae77e17529, type: 3}
+      propertyPath: sceneViewId
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 6632969630673873526, guid: 6f54fe5afd8a14c2cbcefdae77e17529, type: 3}
       propertyPath: m_TagString
       value: Ground
