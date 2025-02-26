@@ -85,11 +85,14 @@ private SimpleLauncher gameLauncher;
 [SerializeField]
     private PlayerInfoDisplay playerUI;//The player UI
 
+
+
 [SerializeField]
 private Shell blankShell; //A blank shell for when player loses their shell
 
 //Durability Logic
 private int timesHit = 0; 
+
 
 
 //Throw Glowstick Logic
@@ -107,16 +110,21 @@ private int score;
         
         //Locks cursor for rotating with mouse (commented out for now)
         //Cursor.lockState = CursorLockMode.Locked;
+
         playerUI = GameObject.FindObjectOfType<PlayerInfoDisplay>();
         gameLauncher = GameObject.FindObjectOfType<SimpleLauncher>();
+        
 
     if(!view.IsMine){
     followCam.enabled = false;
     }
         Color color = colorPalettes[(int)Random.Range(0, colorPalettes.Count - 1)];//Picks a random color 
         //RPC call
-        if (view)
+        if (view){
             this.view.RPC("RPC_SendColor", RpcTarget.All, new Vector3(color.r, color.g, color.b));
+
+        }
+            
         
     }
 
@@ -268,6 +276,47 @@ if (view.IsMine){
 
 private void Update(){
 if (view.IsMine){
+    if(gameLauncher.gameHasEnded == true){
+        OnDisable();
+        List<int> playerScores = gameLauncher.GetScores();
+
+        for(int i = 0; i < playerScores.Count; i++){
+            if(score == playerScores[i]){
+                switch(i){
+                case 0:
+                playerUI.rankText.text = "1st";
+                break;
+
+                case 1:
+                playerUI.rankText.text = "2nd";
+                break;
+
+                case 2:
+                playerUI.rankText.text = "3rd";
+                break;
+
+
+                default:
+                playerUI.rankText.text = $"{i}th";
+                break;
+            }
+            break;
+
+            }
+
+            
+
+        }
+
+
+         
+
+    }else{
+        OnEnable();
+        //gameLauncher.RefreshTimerUI();
+        
+
+    }
     playerUI.SetScore(score);
     if(meleeMovement.ReadValue<float>() != 0 && attackAgain <= 0){
         attackAgain = attackCooldown;
@@ -417,7 +466,7 @@ private void OnTriggerStay(Collider collision) {
 
     }else if (collision.gameObject.tag == "Claws"){
         if(view){
-            if(collision.gameObject != this.damageVolume){
+            if(collision.gameObject != this.damageVolume && gameLauncher.gameHasStarted == true){
                 if(vulnerable){
                 //StartCoroutine(Respawning());
                 
@@ -434,7 +483,6 @@ private void OnTriggerStay(Collider collision) {
                 }else{
                     StartCoroutine(Invulnerability());
                 }
-                
 
 
             }
@@ -547,7 +595,6 @@ IEnumerator Invulnerability(){
 
     public int GetScore(){
         return score; 
-
     }
 
 

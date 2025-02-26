@@ -10,6 +10,8 @@ public class PlayerInfoDisplay : MonoBehaviour
     [SerializeField]
     private TMP_Text shellText, infoText, scoreText;
 
+    public TMP_Text rankText; 
+
     [SerializeField]
     private Image shellIcon; 
 
@@ -22,6 +24,7 @@ public class PlayerInfoDisplay : MonoBehaviour
         scoreText.text = $"{value}"; 
 
     }
+
 
 
     public void SetCurrentShellDisplay(string shellName, string shellInfo, Sprite shellSprite){
