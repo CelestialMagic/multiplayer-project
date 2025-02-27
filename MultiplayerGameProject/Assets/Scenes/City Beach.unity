@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12235,6 +12235,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118874007}
   m_CullTransparentMesh: 1
+--- !u!1001 &1129281648
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1878120766}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 179.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 246.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+      propertyPath: m_Name
+      value: water fountain
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+--- !u!4 &1129281649 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8e8696834a6b1a24490fbb382013369d, type: 3}
+  m_PrefabInstance: {fileID: 1129281648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1135510976
 GameObject:
   m_ObjectHideFlags: 0
@@ -13434,7 +13508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1240256175
 Transform:
   m_ObjectHideFlags: 0
@@ -19915,7 +19989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1773217869
 Transform:
   m_ObjectHideFlags: 0
@@ -21499,6 +21573,7 @@ Transform:
   - {fileID: 1661148493}
   - {fileID: 1143351300}
   - {fileID: 2036135777}
+  - {fileID: 1129281649}
   m_Father: {fileID: 1486851648}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1880136226
