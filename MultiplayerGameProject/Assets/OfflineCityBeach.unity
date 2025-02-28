@@ -637,7 +637,7 @@ Transform:
   m_GameObject: {fileID: 69696036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.327815, y: -0.11934364, z: -48.694637}
+  m_LocalPosition: {x: 13.327815, y: 1.2246561, z: -90.28464}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1113,6 +1113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lobbyName: StartScreen
   howToPlay: 
+  practice: 
   settingsMenu: {fileID: 0}
 --- !u!1 &141481756
 GameObject:
@@ -17407,8 +17408,20 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6910532611312607687, guid: 2ccecaa969ab2478daeccde7d5ad65ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910532611312607687, guid: 2ccecaa969ab2478daeccde7d5ad65ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.480999
+      value: -48.071
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252225455166741649, guid: 2ccecaa969ab2478daeccde7d5ad65ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8252225455166741649, guid: 2ccecaa969ab2478daeccde7d5ad65ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -43
       objectReference: {fileID: 0}
     - target: {fileID: 8845807183462209746, guid: 2ccecaa969ab2478daeccde7d5ad65ee, type: 3}
       propertyPath: m_Name
