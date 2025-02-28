@@ -11,6 +11,7 @@ public class OfflinePlayer : MonoBehaviour
 Player Fields 
 */
 
+private bool isModelRotation = false; 
 
     [SerializeField]
     private float moveSpeed, rotationSpeed, groundDrag, jumpForce;//floats representing speed to move by
@@ -179,6 +180,10 @@ void FixedUpdate(){
 }
 
 private void Update(){
+    if(Input.GetKeyDown(KeyCode.Return))
+        isModelRotation = !isModelRotation;
+    Debug.Log($"Model rotation is {isModelRotation}");
+
     if(meleeMovement.ReadValue<float>() != 0 && attackAgain <= 0){
         attackAgain = attackCooldown;
         DamageVolumeEnable(true);
@@ -201,7 +206,10 @@ private void Update(){
     forwardInput = GetForwardInput();
     SpeedControl();
 
+if(isModelRotation)
     ModelRotation();
+else    
+    SimpleRotation();
 
     
 
@@ -369,6 +377,7 @@ private void OnCollisionExit(Collision collision){
  IEnumerator AttackPeriod()
     {
         yield return new WaitForSeconds(attackCooldown/2);
+        DamageVolumeEnable(false);
         //view.RPC("RPC_DamageVolumeEnable", RpcTarget.All, false);
     }
 

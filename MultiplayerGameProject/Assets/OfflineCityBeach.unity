@@ -1062,6 +1062,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 112672943}
+  - component: {fileID: 112672944}
+  - component: {fileID: 112672945}
   m_Layer: 0
   m_Name: PlaytestCheats
   m_TagString: Untagged
@@ -1084,6 +1086,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &112672944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112672942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51716c7b68384134b5330a348d21abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasToHide: {fileID: 1470173760}
+--- !u!114 &112672945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112672942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5c0bab900604292845c2f5c086a5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lobbyName: StartScreen
+  howToPlay: 
+  settingsMenu: {fileID: 0}
 --- !u!1 &141481756
 GameObject:
   m_ObjectHideFlags: 0
@@ -6349,9 +6379,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SimpleLauncher, Assembly-CSharp
-        m_MethodName: LeaveRoom
+      - m_Target: {fileID: 112672945}
+        m_TargetAssemblyTypeName: BasicMenu, Assembly-CSharp
+        m_MethodName: GoToLobby
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
