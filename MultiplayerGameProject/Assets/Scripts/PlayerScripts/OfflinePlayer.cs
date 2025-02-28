@@ -179,7 +179,6 @@ void FixedUpdate(){
 }
 
 private void Update(){
-    playerUI.SetScore(score);
     if(meleeMovement.ReadValue<float>() != 0 && attackAgain <= 0){
         attackAgain = attackCooldown;
         DamageVolumeEnable(true);
@@ -202,7 +201,7 @@ private void Update(){
     forwardInput = GetForwardInput();
     SpeedControl();
 
-    SimpleRotation();
+    ModelRotation();
 
     
 
