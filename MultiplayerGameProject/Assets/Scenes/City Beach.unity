@@ -5702,7 +5702,7 @@ MonoBehaviour:
   timerStarted: 0
   joinCountdownStarted: 0
   view: {fileID: 551667544}
-  startGamePlayers: 5
+  startGamePlayers: 4
   scores: 
 --- !u!114 &551667544
 MonoBehaviour:
