@@ -726,7 +726,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   followCam: {fileID: 2829932862784158046}
-  viewSpeed: 0.5
+  viewSpeed: 2
   viewRange: 360
   currentShell: {fileID: 5659922239014045668}
   playerShells:
