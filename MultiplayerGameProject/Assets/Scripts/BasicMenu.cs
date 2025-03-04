@@ -11,6 +11,9 @@ public class BasicMenu : MonoBehaviour
     [SerializeField]
     private string howToPlay;//A string to be used for the how to play screen 
 
+     [SerializeField]
+    private string practice;//A string to be used for the how to play screen 
+
     [SerializeField]
     private GameObject settingsMenu;//The settings menu UI
 
@@ -18,6 +21,10 @@ public class BasicMenu : MonoBehaviour
 //Goes to the lobby scene 
     public void GoToLobby(){
         SceneManager.LoadScene(lobbyName);
+    }
+
+    public void GoToPractice(){
+        SceneManager.LoadScene(practice);
     }
 
     public void ShowSettingsMenu(){
