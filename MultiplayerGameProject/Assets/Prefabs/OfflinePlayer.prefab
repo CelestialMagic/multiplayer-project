@@ -688,7 +688,7 @@ MonoBehaviour:
   moveSpeed: 40
   rotationSpeed: 180
   groundDrag: 1
-  jumpForce: 175
+  jumpForce: 300
   orientation: {fileID: 8252225455166741649}
   forwardMovement:
     m_Name: Forward Movement
