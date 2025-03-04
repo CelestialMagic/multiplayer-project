@@ -337,7 +337,7 @@ if (view.IsMine){
 
     if (Input.GetKeyDown(KeyCode.Z))
         {
-            Throw();
+            //Throw();
             Debug.Log("Call Throw");
         }
         
