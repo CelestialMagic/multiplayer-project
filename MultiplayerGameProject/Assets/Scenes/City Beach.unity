@@ -12569,6 +12569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden Crate Closed (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5203759940424437860, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.27649802
@@ -17633,6 +17637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden Crate Closed (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5203759940424437860, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.27649802
@@ -21612,6 +21620,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden Crate Closed (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5203759940424437860, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.27649802
@@ -23122,6 +23134,10 @@ PrefabInstance:
     - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_Name
       value: Wooden Crate Closed (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5203759940424437860, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_LocalScale.x
@@ -28059,6 +28075,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden Crate Closed (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5203759940424437860, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.27649802
@@ -29630,6 +29650,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden Crate Closed (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5203759940424437860, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.27649802
@@ -29826,6 +29850,10 @@ PrefabInstance:
     - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_Name
       value: Wooden Crate Closed (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5203759940424437860, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_LocalScale.x
@@ -30563,6 +30591,10 @@ PrefabInstance:
     - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_Name
       value: Wooden Crate Closed (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5203759940424437860, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_LocalScale.x
@@ -42086,6 +42118,10 @@ PrefabInstance:
     - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_Name
       value: Wooden Crate Closed (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862947191986604766, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5203759940424437860, guid: 0eede7a49e82644b9bef1d3f29eddd0b, type: 3}
       propertyPath: m_LocalScale.x
