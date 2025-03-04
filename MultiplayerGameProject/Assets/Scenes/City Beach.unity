@@ -12996,7 +12996,7 @@ Transform:
   m_GameObject: {fileID: 69696036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.19000018, y: 3.5560002, z: -2.6767635}
+  m_LocalPosition: {x: 9.3, y: 27.3, z: -109.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16657,6 +16657,10 @@ PrefabInstance:
     - target: {fileID: 6648227424876440892, guid: 0f9f5783dec3649948a3e8938c45e9cd, type: 3}
       propertyPath: m_Name
       value: MapCanShell
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648227424876440892, guid: 0f9f5783dec3649948a3e8938c45e9cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21765,6 +21769,10 @@ PrefabInstance:
     - target: {fileID: 1632134087791135892, guid: ebda064cdba7d4e0f906dcb9db509f90, type: 3}
       propertyPath: m_Name
       value: MapPropellerHat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632134087791135892, guid: ebda064cdba7d4e0f906dcb9db509f90, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2156469830539580974, guid: ebda064cdba7d4e0f906dcb9db509f90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36521,6 +36529,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapCoconutShell
       objectReference: {fileID: 0}
+    - target: {fileID: 8642644353205695663, guid: 8b6b1dd2bacd34f64ad61267425ff132, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8987785810269711893, guid: 8b6b1dd2bacd34f64ad61267425ff132, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.8
@@ -42951,6 +42963,10 @@ PrefabInstance:
     - target: {fileID: 4366848631044866542, guid: 8d2705941728c4af4a938dba3152a912, type: 3}
       propertyPath: m_Name
       value: MapTakeoutBoxShell
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366848631044866542, guid: 8d2705941728c4af4a938dba3152a912, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6709398332533754300, guid: 8d2705941728c4af4a938dba3152a912, type: 3}
       propertyPath: view
@@ -68624,6 +68640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConeShellPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7256559768300485710, guid: 6beb025efa47444158f48d9e1740ab49, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7523298313016904121, guid: 6beb025efa47444158f48d9e1740ab49, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.24
@@ -68796,6 +68816,10 @@ PrefabInstance:
     - target: {fileID: 8683947871775244318, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
       propertyPath: m_Name
       value: MapBasicShell
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683947871775244318, guid: b1d4ff620935f4e2c859a0eda4a3c9bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
