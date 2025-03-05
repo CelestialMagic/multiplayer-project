@@ -210,7 +210,7 @@ private void RPC_ShowDamageScale(float value){
 
 [PunRPC]
 private void RPC_IncreaseScore(){
-    score++;
+    score = score+1;
     
 }
 
@@ -297,7 +297,7 @@ if (view.IsMine){
 
 
                 default:
-                playerUI.rankText.text = $"{i}th";
+                playerUI.rankText.text = $"{i+1}th";
                 break;
             }
             break;
