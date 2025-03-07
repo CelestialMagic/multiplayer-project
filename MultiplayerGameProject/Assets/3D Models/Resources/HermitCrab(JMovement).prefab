@@ -1204,7 +1204,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: e664deba79bbc4ee5bd94a1a7870f860, type: 3}
   speedModifier: 1
   jumpModifier: 1
-  healthModifier: 2
+  healthModifier: 5
   attackRadiusModifier: 1
   view: {fileID: 0}
 --- !u!114 &5402031575057910526
@@ -1260,7 +1260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
       propertyPath: healthModifier
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4272461419230011661, guid: d5c1f37c271f8479392ee1e57d12978e, type: 3}
       propertyPath: attackRadiusModifier
