@@ -3,7 +3,67 @@ guid: a2b71459c13b14b51a9efa7560c18c4b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn2
+    second: {fileID: 2100000, guid: 0ebad5c8c43dd402390075e243a8a14e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn4
+    second: {fileID: 2100000, guid: 95a41739ebe6b41c3b2bcd418e1bb59e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__blinn10
+    second: {fileID: 2100000, guid: 4da53c4338d464609b636c5fb789516d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__blinn10
+    second: {fileID: 2100000, guid: 207fda44e7b5041359fe966f19b41524, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__blinn3
+    second: {fileID: 2100000, guid: fab098d0e17aa4a5886f51e2fe6dd415, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__blinn5
+    second: {fileID: 2100000, guid: 8674a75a561f54207ba70fa3f070a5fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__blinn6
+    second: {fileID: 2100000, guid: 650571d09f8ba4b038d43c6c1035e529, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__blinn8
+    second: {fileID: 2100000, guid: da8e9381bbdfc441e9994f367f452c2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__pasted__blinn3
+    second: {fileID: 2100000, guid: 3ee346438be7c4919844ad00b4c20559, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__pasted__blinn4
+    second: {fileID: 2100000, guid: ad105455577374b46a34233186d97803, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__pasted__blinn8
+    second: {fileID: 2100000, guid: fffed05ad32ad4dfbaee9d48d8b92596, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__pasted__pasted__blinn9
+    second: {fileID: 2100000, guid: 767162c2cdddf45f292eb7a0bdba5434, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
