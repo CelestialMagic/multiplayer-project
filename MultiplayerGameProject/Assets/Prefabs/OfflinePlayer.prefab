@@ -822,7 +822,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: c4232f4f-c317-4187-970f-53d4cd08c801
-      m_Path: <Gamepad>/buttonNorth
+      m_Path: <Gamepad>/buttonEast
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -847,7 +847,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: c6a6cff1-f145-4534-a07a-5d866e2fc0fd
-      m_Path: <Gamepad>/buttonWest
+      m_Path: <Gamepad>/buttonSouth
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -872,7 +872,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: 766b7f75-d271-4c88-909a-260c47c95082
-      m_Path: <Gamepad>/buttonEast
+      m_Path: <Gamepad>/buttonNorth
       m_Interactions: 
       m_Processors: 
       m_Groups: 
