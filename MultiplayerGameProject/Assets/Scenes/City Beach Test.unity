@@ -18655,6 +18655,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1208535678}
+    - target: {fileID: 8284477421424864120, guid: b706440b439264cb59418267642560c7, type: 3}
+      propertyPath: sceneViewId
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8367221237730731119, guid: b706440b439264cb59418267642560c7, type: 3}
       propertyPath: m_Mesh
       value: 
