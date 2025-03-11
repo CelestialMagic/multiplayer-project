@@ -72,9 +72,29 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 770bf1b90cccd4f2ab0466e26400e4af, type: 2}
+    - target: {fileID: -4179207856087418224, guid: a66970b3ab9644cdeb7bfe8c099df83f, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: -2579761813533067426, guid: a66970b3ab9644cdeb7bfe8c099df83f, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: -1327838997295202368, guid: a66970b3ab9644cdeb7bfe8c099df83f, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: -856067771806009103, guid: a66970b3ab9644cdeb7bfe8c099df83f, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a66970b3ab9644cdeb7bfe8c099df83f, type: 3}
       propertyPath: m_Name
       value: LemonSlice
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a66970b3ab9644cdeb7bfe8c099df83f, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
