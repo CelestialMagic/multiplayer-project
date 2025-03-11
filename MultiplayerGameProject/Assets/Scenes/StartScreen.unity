@@ -21853,6 +21853,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 1624
       objectReference: {fileID: 0}
+    - target: {fileID: 8284477421424864120, guid: b706440b439264cb59418267642560c7, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8351717085417623055, guid: b706440b439264cb59418267642560c7, type: 3}
       propertyPath: m_Mesh
       value: 
